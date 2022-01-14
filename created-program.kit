@@ -1,0 +1,128 @@
+<!-- $page-title = Mastera - Created program -->
+<!-- $menu-content = active opened -->
+<!-- $menu-programs = active -->
+<!-- @import "parts/_head.kit" -->
+    <main class="main-site">
+        <!-- @import "parts/_sidebar.kit" -->
+        <div class="program">
+            <div class="program-header">
+                <div class="program-header-inner">
+                    <a href="add-program-cover.html" class="program-header-back"><i class="far fa-arrow-left"></i></a>
+                    <div class="program-header-thumb"><img src="upload/program1.jpg" alt=""></div>
+                    <div class="program-header-caption">
+                        <div class="program-header-name">Program Name</div>
+                        <div class="program-header-paid">Paid ($56 for 56 Days)</div>
+                    </div>
+                    <div class="program-header-settings">
+                        <a href="#" class="program-header-settings-button">
+                            <!-- @import "images/settings.svg" -->
+                            <span class="program-header-settings-text">Settings</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- /.program-header-inner -->
+            </div>
+            <!-- /.program-header -->
+            <div class="program-sidebar">
+                <div class="program-sidebar-inner">
+                    <div class="program-sidebar-content">
+                        <div class="program-sidebar-title">Attachments</div>
+                        <div class="program-sidebar-categories">
+                            <div class="program-sidebar-category open">
+                                <div class="program-sidebar-category-caption">
+                                    <a href="#" class="program-sidebar-category-toggle">
+                                        <span class="program-sidebar-category-toggle-arrow"><i class="fas fa-chevron-down"></i></span>
+                                        <input class="program-sidebar-category-caption-text readonly" type="text" value="Category name" placeholder="Category name" readonly>
+                                    </a>
+                                    <div class="program-sidebar-category-more">
+                                        <div class="more drop">
+                                            <a href="#" class="more-toggle drop-toggle"><!-- @import "images/more.svg" --></a>
+                                            <div class="more-panel drop-panel">
+                                                <a href="#" class="more-item program-sidebar-category-edit"><span><i class="far fa-pen"></i></span>Edit</a>
+                                                <a href="#" class="more-item"><span><i class="far fa-clone"></i></span>Clone</a>
+                                                <a href="#" class="more-item"><span><i class="far fa-file-edit"></i></span>Draft</a>
+                                                <a href="#" class="more-item"><span><i class="far fa-arrow-to-bottom"></i></span>Unpublish</a>
+                                                <a href="#" class="more-item"><span><i class="far fa-trash-alt"></i></span>Delete</a>
+                                            </div>
+                                        </div>
+                                        <!-- /.more -->
+                                    </div>
+                                </div>
+                                <!-- /.program-sidebar-category-caption -->
+                                <div class="program-sidebar-category-content">
+                                    <a href="#" class="program-sidebar-attachments-add"><i class="far fa-plus"></i> Add new</a>
+                                </div>
+                                <!-- /.program-sidebar-category-content -->
+                            </div>
+                            <!-- /.program-sidebar-category -->
+                        </div>
+                        <!-- /.program-sidebar-categories -->
+                        <template id="template-new-category">
+                            <div class="program-sidebar-category">
+                                <div class="program-sidebar-category-caption">
+                                    <a href="#" class="program-sidebar-category-toggle">
+                                        <span class="program-sidebar-category-toggle-arrow"><i class="fas fa-chevron-down"></i></span>
+                                        <input class="program-sidebar-category-caption-text readonly" type="text" value="Category name" placeholder="Category name" readonly>
+                                    </a>
+                                    <div class="program-sidebar-category-more">
+                                        <div class="more drop">
+                                            <a href="#" class="more-toggle drop-toggle"><!-- @import "images/more.svg" --></a>
+                                            <div class="more-panel drop-panel">
+                                                <a href="#" class="more-item program-sidebar-category-edit"><span><i class="far fa-pen"></i></span>Edit</a>
+                                                <a href="#" class="more-item"><span><i class="far fa-clone"></i></span>Clone</a>
+                                                <a href="#" class="more-item"><span><i class="far fa-file-edit"></i></span>Draft</a>
+                                                <a href="#" class="more-item"><span><i class="far fa-arrow-to-bottom"></i></span>Unpublish</a>
+                                                <a href="#" class="more-item"><span><i class="far fa-trash-alt"></i></span>Delete</a>
+                                            </div>
+                                        </div>
+                                        <!-- /.more -->
+                                    </div>
+                                </div>
+                                <!-- /.program-sidebar-category-caption -->
+                                <div class="program-sidebar-category-content">
+                                    <a href="#" class="program-sidebar-attachments-add"><i class="far fa-plus"></i> Add new</a>
+                                </div>
+                                <!-- /.program-sidebar-category-content -->
+                            </div>
+                            <!-- /.program-sidebar-category -->
+                        </template>
+                        <a href="#" class="program-sidebar-categories-add"><i class="far fa-plus"></i> Add new category</a>
+                    </div>
+                    <!-- /.program-sidebar-content -->
+                    <div class="program-sidebar-nav">
+                        <div class="program-sidebar-nav-button">
+                            <a href="#" class="button">
+                                <i class="far fa-arrow-from-bottom"></i>&nbsp;&nbsp;
+                                Publish
+                            </a>
+                        </div>
+                        <div class="program-sidebar-nav-button">
+                            <a href="#" class="button button-outline">
+                                <i class="far fa-edit"></i>&nbsp;
+                                Draft
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /.program-sidebar-nav -->
+                </div>
+                <!-- /.program-sidebar-inner -->
+            </div>
+            <!-- /.program-sidebar -->
+            <div class="program-content">
+                <div class="program-content-inner">
+                    <div class="program-content-add">
+                        <a href="#" class="program-content-add-button"><i class="far fa-plus"></i> Add new</a>
+                    </div>
+                    <!-- /.program-content-add -->
+                </div>
+                <!-- /.program-content-inner -->
+            </div>
+            <!-- /.program-content -->
+        </div>
+        <!-- /.program -->
+    </main>
+    <!-- /.main-site -->
+    <!-- @import "parts/_program-settings.kit" -->
+    <div class="modal-mask"></div>
+    <!-- @import "parts/_modal-attachment.kit" -->
+<!-- @import "parts/_foot.kit" -->

@@ -1,0 +1,316 @@
+.new-program {
+    padding: 70px 0;
+    max-width: 690px;
+    margin: 0 auto;
+    &-caption {
+        display: none;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        h1 {
+            flex-grow: 1;
+            font-size: 20px;
+            line-height: 1.4;
+            font-weight: bold;
+            margin: 0;
+        }
+        &-cancel {
+            display: block;
+            margin-right: -10px;
+            padding: 0 10px;
+            font-size: 14px;
+            line-height: 2;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: $theme-text-tertiary;
+            &:hover {
+                color: $theme-text-tertiary;
+            }
+        }
+        &-back {
+            flex: 0 0 24px;
+            max-width: 24px;
+            height: 28px;
+            margin-right: 16px;
+            padding: 5px 0;
+            font-size: 18px;
+            color: $theme-text;
+            text-align: center;
+            &:hover {
+                color: $theme-text;
+            }
+            i {
+                vertical-align: top;
+            }
+        }
+    }
+    &-steps {
+        display: flex;
+        margin: 0 0 94px;
+        padding: 0;
+        list-style: none;
+        li {
+            flex: 1 1 0;
+            max-width: 100%;
+            position: relative;
+            text-align: right;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                height: 1px;
+                left: 10px;
+                right: 50px;
+                background: $theme-text-tertiary;
+            }
+            &:first-child {
+                flex: 0 0 40px;
+                max-width: 40px;
+                &::before {
+                    display: none;
+                }
+            }
+            span {
+                display: inline-block;
+                vertical-align: top;
+                width: 40px;
+                height: 40px;
+                padding: 7px 0;
+                font-size: 16px;
+                line-height: 1.5;
+                font-weight: 500;
+                color: $theme-text-tertiary;
+                text-align: center;
+                white-space: nowrap;
+                border-radius: 50%;
+                border: 1px solid $theme-text-tertiary;
+            }
+            &.active,
+            &.completed {
+                &::before {
+                    background-color: $theme-secondary;
+                }
+                span {
+                    color: $theme-secondary;
+                    border-color: $theme-secondary;
+                }
+            }
+            &.completed {
+                span {
+                    font-size: 0;
+                    line-height: 0;
+                    background: $tr url('../images/check.svg') 50% 50% no-repeat;
+                    background-size: 18px 13px;
+                }
+            }
+        }
+    }
+    .content-caption {
+        padding-bottom: 41px;
+    }
+    &-content {
+        padding-bottom: 79px;
+        &-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -17px;
+        }
+        &-col {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: 0 17px;
+        }
+    }
+    &-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 -10px;
+        &-button {
+            flex: 0 0 50%;
+            max-width: 230px;
+            padding: 0 10px;
+            .button {
+                width: 100%;
+            }
+        }
+    }
+    &-status {
+        margin-bottom: 18px;
+        &-title {
+            margin-bottom: 6px;
+            font-size: 9px;
+            line-height: 1.334;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: $theme-text-secondary;
+        }
+    }
+    &-price {
+        position: relative;
+        input.input-text {
+            padding-right: 48px;
+        }
+        &-sign {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: $theme-dark-gray;
+            background: $theme-quaternary;
+            border: 1px solid $theme-quaternary;
+            border-radius: 0 8px 8px 0;
+        }
+    }
+    &-select {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 82px;
+        select.select {
+            border-radius: 0 8px 8px 0;
+            background-color: $theme-quaternary;
+            border-color: $theme-quaternary;
+        }
+        &-wrap {
+            position: relative;
+            input.input-text {
+                padding-right: 82px;
+            }
+        }
+    }
+    &-cover {
+        margin-top: -13px;
+        &-caption {
+            display: flex;
+            align-items: center;
+            min-height: 36px;
+            margin-bottom: 15px;
+        }
+        &-title {
+            flex-grow: 1;
+            padding-top: 2px;
+            font-size: 9px;
+            line-height: 1.334;
+            font-weight: bold;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: $theme-text-secondary;
+        }
+        &-tabs {
+            flex: 0 0 210px;
+            max-width: 210px;
+            padding-left: 10px;
+            .content-nav-list {
+                li {
+                    a {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        &-embed {
+            textarea.textarea {
+                height: 157px;
+            }
+            .input-wrapper-note {
+                padding-top: 7px;
+                color: $theme-text;
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .new-program {
+        padding: 0 0 41px;
+        margin: 0;
+        max-width: none;
+        &-caption {
+            display: flex;
+        }
+        &-steps {
+            margin-bottom: 33px;
+            li {
+                &::before {
+                    right: 34px;
+                }
+                &:first-child {
+                    flex: 0 0 24px;
+                    max-width: 24px;
+                }
+                span {
+                    width: 24px;
+                    height: 24px;
+                    padding: 1px 0;
+                    font-size: 14px;
+                    line-height: 1.43;
+                }
+                &.completed {
+                    span {
+                        background-size: 12px 8px;
+                    }
+                }
+            }
+        }
+        .content-caption {
+            display: none;
+        }
+        &-content {
+            padding-bottom: 23px;
+            &-row {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            &-col {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        &-nav {
+            position: absolute;
+            left: 16px;
+            right: 16px;
+            bottom: 16px;
+            margin: 0;
+            &-button {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding: 0;
+                &-mobile-none {
+                    display: none;
+                }
+            }
+        }
+        &-cover {
+            margin-top: 0;
+            padding-bottom: 13px;
+            &-caption {
+                flex-wrap: wrap;
+                min-height: 0;
+                margin-bottom: 0;
+                padding-bottom: 1px;
+            }
+            &-title {
+                padding-top: 0;
+                font-weight: normal;
+                margin-bottom: 10px;
+            }
+            &-tabs {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding-left: 0;
+                padding-top: 1px;
+                margin-bottom: 11px;
+            }
+        }
+    }
+}

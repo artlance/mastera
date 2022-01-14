@@ -1,0 +1,65 @@
+:root {
+    --bs-gutter-x: 15px;
+    --theme-primary: #000000;
+    --theme-secondary: #3A66ED;
+    --theme-tertiary: #EC670B;
+    --theme-quaternary: #E5EAEC;
+
+    --theme-text: #38474F;
+    --theme-text-secondary: #77848E;
+    --theme-text-tertiary: #A4AFB7;
+
+    --theme-link: #3A66ED;
+    --theme-link-hover: #5178ef;
+    --theme-focus: #93c0ee;
+
+    --theme-white: #ffffff;
+    --theme-black: #000000;
+    --theme-dark-gray: #7D8994;
+    --theme-gray: #D2D9E0;
+    --theme-light-gray: #F1F4F5;
+    --theme-green: #25C170;
+    --theme-red: #F3535E;
+    --theme-transparent: transparent;
+}
+
+
+$font-size-html: 20px;
+$font-size: 14px;
+$line-height: 1.43;
+$spacer: $font-size * $line-height;
+$font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family: 'Roboto', $font-sans-serif;
+$ff: $font-family;
+
+
+$duration: 0.2s; $d: $duration;
+$function: cubic-bezier(0.4, 0.0, 0.2, 1); $f: $function;
+
+
+$theme-primary: var(--theme-primary);
+$theme-secondary: var(--theme-secondary);
+$theme-tertiary: var(--theme-tertiary);
+$theme-quaternary: var(--theme-quaternary);
+
+
+$theme-text: var(--theme-text);
+$theme-text-secondary: var(--theme-text-secondary);
+$theme-text-tertiary: var(--theme-text-tertiary);
+
+
+$theme-link: var(--theme-link);
+$theme-link-hover: var(--theme-link-hover);
+$theme-focus: var(--theme-focus);
+
+
+$theme-white: var(--theme-white);
+$theme-black: var(--theme-black);
+$theme-dark-gray: var(--theme-dark-gray);
+$theme-gray: var(--theme-gray);
+$theme-light-gray: var(--theme-light-gray);
+$theme-green: var(--theme-green);
+$theme-red: var(--theme-red);
+$theme-transparent: var(--theme-transparent); $tr: $theme-transparent;
+
+

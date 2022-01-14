@@ -1,0 +1,99 @@
+/* typography */
+.wysiwyg {
+    h1 {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+    }
+    h2 {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+    }
+    h3 {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+    }
+    h4 {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+    }
+    h5 {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+    }
+    h6 {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+    }
+    p {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+    }
+    a {
+        word-break: break-all;
+        word-break: break-word;
+        hyphens: auto;
+    }
+    img {
+        display: block;
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+        &.alignleft {
+            margin: $spacer $spacer $spacer 0;
+        }
+        &.alignright {
+            margin: $spacer 0 $spacer $spacer;
+        }
+        &.aligncenter {
+        }
+    }
+    blockquote {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+        padding-left: $spacer;
+        font-style: italic;
+        p {
+            margin-bottom: 0;
+        }
+    }
+    hr {
+        clear: both;
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+        border: 0;
+        border-bottom: 1px solid $theme-light-gray;
+        &.transparent {
+            border-bottom-color: $theme-transparent;
+        }
+    }
+    ul {
+        overflow: hidden;
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+        list-style: inside disc;
+        li {
+            padding-left: $spacer;
+        }
+    }
+    ol {
+        overflow: hidden;
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+        list-style: inside decimal;
+        li {
+            padding-left: $spacer;
+        }
+    }
+    table {
+        margin-top: $spacer;
+        margin-bottom: $spacer;
+        th {
+            padding: $spacer/2 $spacer;
+            background: $theme-light-gray;
+            border: 1px solid $theme-light-gray;
+        }
+        td {
+            padding: $spacer/2 $spacer;
+            border: 1px solid $theme-light-gray;
+        }
+    }
+}
