@@ -14,7 +14,11 @@
                         <div class="program-header-paid">Paid ($56 for 56 Days)</div>
                     </div>
                     <div class="program-header-settings">
-                        <a href="#" class="program-header-settings-button">
+                        <a href="preview.html" class="program-header-settings-button program-header-settings-button-preview">
+                            <!-- @import "images/preview.svg" -->
+                            <span class="program-header-settings-text">Preview</span>
+                        </a>
+                        <a href="#" class="program-header-settings-button program-header-settings-button-settings">
                             <!-- @import "images/settings.svg" -->
                             <span class="program-header-settings-text">Settings</span>
                         </a>
@@ -263,6 +267,7 @@
                         </div>
                         <!-- /.input-wrapper -->
                         <div class="program-video-content-nav">
+                            <div class="program-video-tabs"></div>
                             <div class="program-video-availability">
                                 <a href="#" class="program-video-availability-button">
                                     <span class="program-video-availability-icon"><i class="far fa-lock-alt"></i></span>
@@ -324,6 +329,28 @@
                             <!-- /.input-wrapper -->
                         </div>
                         <!-- /.program-video-info -->
+
+                        <div class="program-video-attachments">
+                            <div class="program-video-attachments-title">Attachments</div>
+                            <div class="upload-file">
+                                <template class="upload-file-template">
+                                    <div class="upload-file-list-item">
+                                        <a href="#" class="upload-file-list-item-remove"><i class="fal fa-times"></i></a>
+                                        <div class="upload-file-list-item-icon"><i class="far fa-file"></i></div>
+                                        <div class="upload-file-list-item-name"></div>
+                                        <div class="upload-file-list-item-size"></div>
+                                    </div>
+                                </template>
+                                <div class="upload-file-list" data-pull-list="attachments-1"></div>
+                                <div class="upload-file-block">
+                                    <input type="file" class="upload-file-input" data-pull="attachments-1" id="attachments-1" name="attachments-1" multiple>
+                                    <label class="upload-file-label" for="attachments-1"><i class="far fa-plus"></i></label>
+                                </div>
+                            </div>
+                            <!-- /.upload-file -->
+                        </div>
+                        <!-- /.program-video-attachments -->
+
                     </div>
                     <!-- /.program-video-content -->
                     <div class="program-video-nav">

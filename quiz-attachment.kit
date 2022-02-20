@@ -14,7 +14,11 @@
                         <div class="program-header-paid">Paid ($56 for 56 Days)</div>
                     </div>
                     <div class="program-header-settings">
-                        <a href="#" class="program-header-settings-button">
+                        <a href="preview.html" class="program-header-settings-button program-header-settings-button-preview">
+                            <!-- @import "images/preview.svg" -->
+                            <span class="program-header-settings-text">Preview</span>
+                        </a>
+                        <a href="#" class="program-header-settings-button program-header-settings-button-settings">
                             <!-- @import "images/settings.svg" -->
                             <span class="program-header-settings-text">Settings</span>
                         </a>
@@ -246,11 +250,11 @@
                         <a href="#" class="program-content-back">
                             <i class="far fa-arrow-left"></i>
                         </a>
-                        <div class="program-video-title">File Attachment</div>
+                        <div class="program-video-title">Quiz Attachment</div>
                         <a href="#" class="program-video-delete"><i class="far fa-trash-alt"></i></a>
                     </div>
                     <!-- /.program-video-caption -->
-                    <div class="program-video-content tab">
+                    <div class="program-video-content">
                         <div class="input-wrapper">
                             <label for="program-file-name">Lesson name</label>
                             <input type="text" class="input-text symbols-maxlength" maxlength="150" placeholder="Enter name" id="program-file-name" name="program-file-name">
@@ -264,10 +268,6 @@
                         <!-- /.input-wrapper -->
                         <div class="program-video-content-nav">
                             <div class="program-video-tabs">
-                                <ul class="content-nav-list tabs">
-                                    <li class="active"><a href="#">Open text answer</a></li>
-                                    <li><a href="#">One correct answer</a></li>
-                                </ul>
                             </div>
                             <!-- /.program-video-tabs -->
                             <div class="program-video-availability">
@@ -282,109 +282,414 @@
                         </div>
                         <!-- /.program-video-content-nav -->
 
-                        <div class="program-quiz-boxes">
-                            <div class="box visible">
-                                <div class="program-quiz-boxes-title">Quiz</div>
-                                <div class="input-wrapper">
-                                    <label for="program-quiz-question">Enter Quiz question</label>
-                                    <input type="text" class="input-text input-text-gray symbols-maxlength" maxlength="150" placeholder="Enter question" id="program-quiz-question" name="program-quiz-question">
-                                    <div class="input-wrapper-info">
-                                        <div class="input-wrapper-error">Required field</div>
-                                        <div class="input-wrapper-symbols">
-                                            <span class="symbols-maxlength-current">0</span>/150
-                                        </div>
+                        <div class="quiz-question-list">
+                            <div class="quiz-question-item tab">
+
+                                <a href="#" class="quiz-question-item-delete"><i class="far fa-trash-alt"></i></a>
+
+                                <div class="quiz-question-item-boxes-title">
+                                    <div class="quiz-question-dragg">
+                                        <i class="fas fa-grip-vertical"></i>
                                     </div>
+                                    <div class="quiz-question-item-boxes-title-text">Question #1</div>
                                 </div>
-                                <!-- /.input-wrapper -->
+
                                 <div class="input-wrapper">
-                                    <label for="program-quiz-answer">Enter answer</label>
-                                    <input type="text" class="input-text input-text-gray symbols-maxlength" maxlength="150" placeholder="Enter answer" id="program-quiz-answer" name="program-quiz-answer">
-                                    <div class="input-wrapper-info">
-                                        <div class="input-wrapper-error">Required field</div>
-                                        <div class="input-wrapper-symbols">
-                                            <span class="symbols-maxlength-current">0</span>/150
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /.input-wrapper -->
-                            </div>
-                            <!-- /.box -->
-                            <div class="box">
-                                <div class="program-quiz-boxes-title">Quiz</div>
-                                <div class="input-wrapper">
-                                    <label for="program-quiz-question-2">Enter Quiz question</label>
-                                    <input type="text" class="input-text input-text-gray symbols-maxlength" maxlength="150" placeholder="Enter question" id="program-quiz-question-2" name="program-quiz-question-2">
-                                    <div class="input-wrapper-info">
-                                        <div class="input-wrapper-error">Required field</div>
-                                        <div class="input-wrapper-symbols">
-                                            <span class="symbols-maxlength-current">0</span>/150
-                                        </div>
-                                    </div>
+                                    <label>Quiz type</label>
+                                    <ul class="content-nav-list tabs">
+                                        <li class="active"><a href="#"><i class="far fa-align-left"></i>Open text</a></li>
+                                        <li><a href="#"><i class="fas fa-check-square"></i> Multiple choice</a></li>
+                                        <li><a href="#"><i class="far fa-file"></i>File upload</a></li>
+                                    </ul>
                                 </div>
                                 <!-- /.input-wrapper -->
 
-                                <div class="input-wrapper">
-                                    <label>Enter Quiz Answer</label>
-                                    <div class="program-quiz-input-list">
-                                        <div class="program-quiz-input-row">
-                                            <a href="#" class="program-quiz-input-row-check active">
-                                                <div class="check-icon">
-                                                    <i class="far fa-check"></i>
-                                                </div>
-                                            </a>
-                                            <input type="text" class="input-text input-text-gray" placeholder="Answer #1">
-                                            <a href="#" class="program-quiz-input-row-delete">
-                                                <i class="fal fa-times"></i>
-                                            </a>
-                                        </div>
-                                        <div class="program-quiz-input-row">
-                                            <a href="#" class="program-quiz-input-row-check">
-                                                <div class="check-icon">
-                                                    <i class="far fa-check"></i>
-                                                </div>
-                                            </a>
-                                            <input type="text" class="input-text input-text-gray" placeholder="Answer #2">
-                                            <a href="#" class="program-quiz-input-row-delete">
-                                                <i class="fal fa-times"></i>
-                                            </a>
-                                        </div>
-                                        <div class="program-quiz-input-row">
-                                            <a href="#" class="program-quiz-input-row-check">
-                                                <div class="check-icon">
-                                                    <i class="far fa-check"></i>
-                                                </div>
-                                            </a>
-                                            <input type="text" class="input-text input-text-gray" placeholder="Answer #3">
-                                            <a href="#" class="program-quiz-input-row-delete">
-                                                <i class="fal fa-times"></i>
-                                            </a>
-                                        </div>
-                                        <div class="program-quiz-input-row">
-                                            <a href="#" class="program-quiz-input-row-check">
-                                                <div class="check-icon">
-                                                    <i class="far fa-check"></i>
-                                                </div>
-                                            </a>
-                                            <input type="text" class="input-text input-text-gray" placeholder="Answer #4">
-                                            <a href="#" class="program-quiz-input-row-delete">
-                                                <i class="fal fa-times"></i>
-                                            </a>
+                                <div class="box visible">
+                                    <div class="input-wrapper">
+                                        <label for="program-quiz-question[1]">Enter Quiz question</label>
+                                        <input type="text" class="input-text input-text-gray symbols-maxlength" maxlength="150" placeholder="Enter question" id="program-quiz-question[1]" name="program-quiz-question[1]">
+                                        <div class="input-wrapper-info">
+                                            <div class="input-wrapper-error">Required field</div>
+                                            <div class="input-wrapper-symbols">
+                                                <span class="symbols-maxlength-current">0</span>/150
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="program-quiz-input-note">Check the box for correct answer</div>
-                                    <a href="#" class="program-quiz-add"><i class="far fa-plus"></i> Add answer</a>
+                                    <!-- /.input-wrapper -->
+
+                                    <div class="input-wrapper input-wrapper-last-child">
+                                        <label for="program-quiz-answer[1]">Enter answer</label>
+                                        <input type="text" class="input-text input-text-gray symbols-maxlength" maxlength="150" placeholder="Enter answer" id="program-quiz-answer[1]" name="program-quiz-answer[1]">
+                                        <div class="input-wrapper-info">
+                                            <div class="input-wrapper-error">Required field</div>
+                                            <div class="input-wrapper-symbols">
+                                                <span class="symbols-maxlength-current">0</span>/150
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.input-wrapper -->
+                                </div>
+                                <!-- /.box -->
+
+                                <div class="box">
+                                    <div class="input-wrapper">
+                                        <label for="program-quiz-question[1]">Enter Quiz question</label>
+                                        <input type="text" class="input-text input-text-gray symbols-maxlength" maxlength="150" placeholder="Enter question" id="program-quiz-question[1]" name="program-quiz-question[1]">
+                                        <div class="input-wrapper-info">
+                                            <div class="input-wrapper-error">Required field</div>
+                                            <div class="input-wrapper-symbols">
+                                                <span class="symbols-maxlength-current">0</span>/150
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.input-wrapper -->
+                                    <div class="input-wrapper input-wrapper-last-child">
+                                        <label>Enter Quiz Answer</label>
+                                        <div class="program-quiz-input-list">
+                                            <div class="program-quiz-input-row">
+                                                <a href="#" class="program-quiz-input-row-check active">
+                                                    <div class="check-icon">
+                                                        <i class="far fa-check"></i>
+                                                    </div>
+                                                </a>
+                                                <input type="text" class="input-text input-text-gray" placeholder="Answer #1">
+                                                <a href="#" class="program-quiz-input-row-delete">
+                                                    <i class="fal fa-times"></i>
+                                                </a>
+                                            </div>
+                                            <div class="program-quiz-input-row">
+                                                <a href="#" class="program-quiz-input-row-check">
+                                                    <div class="check-icon">
+                                                        <i class="far fa-check"></i>
+                                                    </div>
+                                                </a>
+                                                <input type="text" class="input-text input-text-gray" placeholder="Answer #2">
+                                                <a href="#" class="program-quiz-input-row-delete">
+                                                    <i class="fal fa-times"></i>
+                                                </a>
+                                            </div>
+                                            <div class="program-quiz-input-row">
+                                                <a href="#" class="program-quiz-input-row-check">
+                                                    <div class="check-icon">
+                                                        <i class="far fa-check"></i>
+                                                    </div>
+                                                </a>
+                                                <input type="text" class="input-text input-text-gray" placeholder="Answer #3">
+                                                <a href="#" class="program-quiz-input-row-delete">
+                                                    <i class="fal fa-times"></i>
+                                                </a>
+                                            </div>
+                                            <div class="program-quiz-input-row">
+                                                <a href="#" class="program-quiz-input-row-check">
+                                                    <div class="check-icon">
+                                                        <i class="far fa-check"></i>
+                                                    </div>
+                                                </a>
+                                                <input type="text" class="input-text input-text-gray" placeholder="Answer #4">
+                                                <a href="#" class="program-quiz-input-row-delete">
+                                                    <i class="fal fa-times"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="program-quiz-input-note">Check the box for correct answer</div>
+                                        <a href="#" class="program-quiz-add"><i class="far fa-plus"></i> Add answer</a>
+                                    </div>
+                                    <!-- /.input-wrapper -->
+                                </div>
+                                <!-- /.box -->
+
+                                <div class="box">
+                                    <div class="drag-file">
+                                        <input type="file" class="drag-file-input" id="drag-file-images[1]" multiple>
+                                        <label for="drag-file-images[1]" class="drag-file-block">
+                                            <span class="drag-file-content">
+                                                <span class="drag-file-plus"><i class="fal fa-plus"></i></span>
+                                                <span class="drag-file-title">Upload file</span>
+                                                <span class="drag-file-mobile-title">Upload file</span>
+                                            </span>
+                                        </label>
+                                        <div class="drag-file-value"></div>
+                                    </div>
+                                    <!-- /.drag-file -->
+                                </div>
+                                <!-- /.box -->
+
+                            </div>
+                            <div class="quiz-question-item tab">
+
+                                <a href="#" class="quiz-question-item-delete"><i class="far fa-trash-alt"></i></a>
+
+                                <div class="quiz-question-item-boxes-title">
+                                    <div class="quiz-question-dragg">
+                                        <i class="fas fa-grip-vertical"></i>
+                                    </div>
+                                    <div class="quiz-question-item-boxes-title-text">Question #2</div>
+                                </div>
+
+                                <div class="input-wrapper">
+                                    <label>Quiz type</label>
+                                    <ul class="content-nav-list tabs">
+                                        <li><a href="#"><i class="far fa-align-left"></i>Open text</a></li>
+                                        <li class="active"><a href="#"><i class="fas fa-check-square"></i> Multiple choice</a></li>
+                                        <li><a href="#"><i class="far fa-file"></i>File upload</a></li>
+                                    </ul>
                                 </div>
                                 <!-- /.input-wrapper -->
 
+                                <div class="box">
+                                    <div class="input-wrapper">
+                                        <label for="program-quiz-question[2]">Enter Quiz question</label>
+                                        <input type="text" class="input-text input-text-gray symbols-maxlength" maxlength="150" placeholder="Enter question" id="program-quiz-question[2]" name="program-quiz-question[2]">
+                                        <div class="input-wrapper-info">
+                                            <div class="input-wrapper-error">Required field</div>
+                                            <div class="input-wrapper-symbols">
+                                                <span class="symbols-maxlength-current">0</span>/150
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.input-wrapper -->
+
+                                    <div class="input-wrapper input-wrapper-last-child">
+                                        <label for="program-quiz-answer[2]">Enter answer</label>
+                                        <input type="text" class="input-text input-text-gray symbols-maxlength" maxlength="150" placeholder="Enter answer" id="program-quiz-answer[2]" name="program-quiz-answer[2]">
+                                        <div class="input-wrapper-info">
+                                            <div class="input-wrapper-error">Required field</div>
+                                            <div class="input-wrapper-symbols">
+                                                <span class="symbols-maxlength-current">0</span>/150
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.input-wrapper -->
+                                </div>
+                                <!-- /.box -->
+
+                                <div class="box visible">
+                                    <div class="input-wrapper">
+                                        <label for="program-quiz-question[2]">Enter Quiz question</label>
+                                        <input type="text" class="input-text input-text-gray symbols-maxlength" maxlength="150" placeholder="Enter question" id="program-quiz-question[2]" name="program-quiz-question[2]">
+                                        <div class="input-wrapper-info">
+                                            <div class="input-wrapper-error">Required field</div>
+                                            <div class="input-wrapper-symbols">
+                                                <span class="symbols-maxlength-current">0</span>/150
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.input-wrapper -->
+                                    <div class="input-wrapper input-wrapper-last-child">
+                                        <label>Enter Quiz Answer</label>
+                                        <div class="program-quiz-input-list">
+                                            <div class="program-quiz-input-row">
+                                                <a href="#" class="program-quiz-input-row-check active">
+                                                    <div class="check-icon">
+                                                        <i class="far fa-check"></i>
+                                                    </div>
+                                                </a>
+                                                <input type="text" class="input-text input-text-gray" placeholder="Answer #1">
+                                                <a href="#" class="program-quiz-input-row-delete">
+                                                    <i class="fal fa-times"></i>
+                                                </a>
+                                            </div>
+                                            <div class="program-quiz-input-row">
+                                                <a href="#" class="program-quiz-input-row-check">
+                                                    <div class="check-icon">
+                                                        <i class="far fa-check"></i>
+                                                    </div>
+                                                </a>
+                                                <input type="text" class="input-text input-text-gray" placeholder="Answer #2">
+                                                <a href="#" class="program-quiz-input-row-delete">
+                                                    <i class="fal fa-times"></i>
+                                                </a>
+                                            </div>
+                                            <div class="program-quiz-input-row">
+                                                <a href="#" class="program-quiz-input-row-check">
+                                                    <div class="check-icon">
+                                                        <i class="far fa-check"></i>
+                                                    </div>
+                                                </a>
+                                                <input type="text" class="input-text input-text-gray" placeholder="Answer #3">
+                                                <a href="#" class="program-quiz-input-row-delete">
+                                                    <i class="fal fa-times"></i>
+                                                </a>
+                                            </div>
+                                            <div class="program-quiz-input-row">
+                                                <a href="#" class="program-quiz-input-row-check">
+                                                    <div class="check-icon">
+                                                        <i class="far fa-check"></i>
+                                                    </div>
+                                                </a>
+                                                <input type="text" class="input-text input-text-gray" placeholder="Answer #4">
+                                                <a href="#" class="program-quiz-input-row-delete">
+                                                    <i class="fal fa-times"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="program-quiz-input-note">Check the box for correct answer</div>
+                                        <a href="#" class="program-quiz-add"><i class="far fa-plus"></i> Add answer</a>
+                                    </div>
+                                    <!-- /.input-wrapper -->
+                                </div>
+                                <!-- /.box -->
+
+                                <div class="box">
+                                    <div class="drag-file">
+                                        <input type="file" class="drag-file-input" id="drag-file-images[2]" multiple>
+                                        <label for="drag-file-images[2]" class="drag-file-block">
+                                            <span class="drag-file-content">
+                                                <span class="drag-file-plus"><i class="fal fa-plus"></i></span>
+                                                <span class="drag-file-title">Upload file</span>
+                                                <span class="drag-file-mobile-title">Upload file</span>
+                                            </span>
+                                        </label>
+                                        <div class="drag-file-value"></div>
+                                    </div>
+                                    <!-- /.drag-file -->
+                                </div>
+                                <!-- /.box -->
+
                             </div>
-                            <!-- /.box -->
+                            <div class="quiz-question-item tab">
+
+                                <a href="#" class="quiz-question-item-delete"><i class="far fa-trash-alt"></i></a>
+
+                                <div class="quiz-question-item-boxes-title">
+                                    <div class="quiz-question-dragg">
+                                        <i class="fas fa-grip-vertical"></i>
+                                    </div>
+                                    <div class="quiz-question-item-boxes-title-text">Question #3</div>
+                                </div>
+
+                                <div class="input-wrapper">
+                                    <label>Quiz type</label>
+                                    <ul class="content-nav-list tabs">
+                                        <li><a href="#"><i class="far fa-align-left"></i>Open text</a></li>
+                                        <li><a href="#"><i class="fas fa-check-square"></i> Multiple choice</a></li>
+                                        <li class="active"><a href="#"><i class="far fa-file"></i>File upload</a></li>
+                                    </ul>
+                                </div>
+                                <!-- /.input-wrapper -->
+
+                                <div class="box">
+                                    <div class="input-wrapper">
+                                        <label for="program-quiz-question[3]">Enter Quiz question</label>
+                                        <input type="text" class="input-text input-text-gray symbols-maxlength" maxlength="150" placeholder="Enter question" id="program-quiz-question[3]" name="program-quiz-question[3]">
+                                        <div class="input-wrapper-info">
+                                            <div class="input-wrapper-error">Required field</div>
+                                            <div class="input-wrapper-symbols">
+                                                <span class="symbols-maxlength-current">0</span>/150
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.input-wrapper -->
+
+                                    <div class="input-wrapper input-wrapper-last-child">
+                                        <label for="program-quiz-answer[3]">Enter answer</label>
+                                        <input type="text" class="input-text input-text-gray symbols-maxlength" maxlength="150" placeholder="Enter answer" id="program-quiz-answer[3]" name="program-quiz-answer[3]">
+                                        <div class="input-wrapper-info">
+                                            <div class="input-wrapper-error">Required field</div>
+                                            <div class="input-wrapper-symbols">
+                                                <span class="symbols-maxlength-current">0</span>/150
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.input-wrapper -->
+                                </div>
+                                <!-- /.box -->
+
+                                <div class="box">
+                                    <div class="input-wrapper">
+                                        <label for="program-quiz-question[3]">Enter Quiz question</label>
+                                        <input type="text" class="input-text input-text-gray symbols-maxlength" maxlength="150" placeholder="Enter question" id="program-quiz-question[3]" name="program-quiz-question[3]">
+                                        <div class="input-wrapper-info">
+                                            <div class="input-wrapper-error">Required field</div>
+                                            <div class="input-wrapper-symbols">
+                                                <span class="symbols-maxlength-current">0</span>/150
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.input-wrapper -->
+                                    <div class="input-wrapper input-wrapper-last-child">
+                                        <label>Enter Quiz Answer</label>
+                                        <div class="program-quiz-input-list">
+                                            <div class="program-quiz-input-row">
+                                                <a href="#" class="program-quiz-input-row-check active">
+                                                    <div class="check-icon">
+                                                        <i class="far fa-check"></i>
+                                                    </div>
+                                                </a>
+                                                <input type="text" class="input-text input-text-gray" placeholder="Answer #1">
+                                                <a href="#" class="program-quiz-input-row-delete">
+                                                    <i class="fal fa-times"></i>
+                                                </a>
+                                            </div>
+                                            <div class="program-quiz-input-row">
+                                                <a href="#" class="program-quiz-input-row-check">
+                                                    <div class="check-icon">
+                                                        <i class="far fa-check"></i>
+                                                    </div>
+                                                </a>
+                                                <input type="text" class="input-text input-text-gray" placeholder="Answer #2">
+                                                <a href="#" class="program-quiz-input-row-delete">
+                                                    <i class="fal fa-times"></i>
+                                                </a>
+                                            </div>
+                                            <div class="program-quiz-input-row">
+                                                <a href="#" class="program-quiz-input-row-check">
+                                                    <div class="check-icon">
+                                                        <i class="far fa-check"></i>
+                                                    </div>
+                                                </a>
+                                                <input type="text" class="input-text input-text-gray" placeholder="Answer #3">
+                                                <a href="#" class="program-quiz-input-row-delete">
+                                                    <i class="fal fa-times"></i>
+                                                </a>
+                                            </div>
+                                            <div class="program-quiz-input-row">
+                                                <a href="#" class="program-quiz-input-row-check">
+                                                    <div class="check-icon">
+                                                        <i class="far fa-check"></i>
+                                                    </div>
+                                                </a>
+                                                <input type="text" class="input-text input-text-gray" placeholder="Answer #4">
+                                                <a href="#" class="program-quiz-input-row-delete">
+                                                    <i class="fal fa-times"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="program-quiz-input-note">Check the box for correct answer</div>
+                                        <a href="#" class="program-quiz-add"><i class="far fa-plus"></i> Add answer</a>
+                                    </div>
+                                    <!-- /.input-wrapper -->
+                                </div>
+                                <!-- /.box -->
+
+                                <div class="box visible">
+                                    <div class="drag-file">
+                                        <input type="file" class="drag-file-input" id="drag-file-images[3]" multiple>
+                                        <label for="drag-file-images[3]" class="drag-file-block">
+                                            <span class="drag-file-content">
+                                                <span class="drag-file-plus"><i class="fal fa-plus"></i></span>
+                                                <span class="drag-file-title">Upload file</span>
+                                                <span class="drag-file-mobile-title">Upload file</span>
+                                            </span>
+                                        </label>
+                                        <div class="drag-file-value"></div>
+                                    </div>
+                                    <!-- /.drag-file -->
+                                </div>
+                                <!-- /.box -->
+
+                            </div>
                         </div>
-                        <!-- /.quiz-boxes -->
+                        <!-- /.quiz-question-list -->
+
+                        <div class="quiz-question-add-new">
+                            <a href="#" class="program-quiz-add"><i class="far fa-plus"></i> Add new question</a>
+                        </div>
 
                         <div class="program-video-info">
                             <div class="input-wrapper">
-                                <label for="program-quiz-description">Description</label>
-                                <textarea class="textarea textarea-small symbols-maxlength" maxlength="500" placeholder="Add description" id="program-quiz-description" name="program-quiz-description" cols="30" rows="10"></textarea>
+                                <label for="program-quiz-description-1">Description</label>
+                                <textarea class="textarea textarea-small symbols-maxlength" maxlength="500" placeholder="Add description" id="program-quiz-description-1" name="program-quiz-description-1" cols="30" rows="10"></textarea>
                                 <div class="input-wrapper-info">
                                     <div class="input-wrapper-error">Required field</div>
                                     <div class="input-wrapper-symbols">

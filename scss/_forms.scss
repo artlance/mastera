@@ -15,6 +15,9 @@
 }
 .input-wrapper {
     margin-bottom: 21px;
+    &-last-child {
+        margin-bottom: 0;
+    }
     & > label {
         display: block;
         margin: 0 0 6px;
@@ -114,6 +117,31 @@ select.select {
 }
 select.select::-ms-expand {
     display: none;
+}
+.input-stack {
+    display: flex;
+    &-value {
+        flex-grow: 1;
+        input.input-text,
+        select.select {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+    &-option {
+        input.input-text,
+        select.select {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            background-color: #E5EAEC;
+            border-color: #E5EAEC;
+        }
+    }
+}
+.data-target {
+    &.hidden {
+        display: none;
+    }
 }
 .checkbox,
 .radio {

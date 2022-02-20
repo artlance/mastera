@@ -32,6 +32,14 @@ $(document).ready(function () {
     $(document).on('click', '.toggle-active li:not(.active)', function (event) {
         event.preventDefault();
         $(this).addClass('active').siblings().removeClass('active');
+
+        var thisTarget = $(this).find('a').data('target');
+        if (thisTarget) {
+            $('[data-toggleTarget="' + thisTarget + '"]')
+                .removeClass('hidden')
+                .siblings('.data-target')
+                .addClass('hidden');
+        }
     });
 
     //-----------------------------------------//
@@ -107,7 +115,7 @@ $(document).ready(function () {
     //-----------------------------------------//
 
     //program settings
-    $(document).on('click', '.program-header-settings-button', function (event) {
+    $(document).on('click', '.program-header-settings-button-settings', function (event) {
         event.preventDefault();
         $('.program-settings').addClass('show');
     });
@@ -333,6 +341,15 @@ $(document).ready(function () {
     $(document).on('click', '.program-schedule-toggle', function (event) {
         event.preventDefault();
         $(this).parents('.program-schedule-item').toggleClass('active');
+    });
+
+    //-----------------------------------------//
+
+    $('.quiz-question-list').sortable({
+        //placeholder: "ui-state-highlight"
+        connectWith: ".quiz-question-item",
+        handle: ".quiz-question-dragg",
+        placeholder: "quiz-placeholder"
     });
 
     //-----------------------------------------//

@@ -279,13 +279,13 @@
             <!-- /.program-settings-cover -->
             <div class="program-settings-tabs">
                 <ul class="content-nav-list toggle-active">
-                    <li class="active"><a href="#">Info</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Teaser video</a></li>
+                    <li class="active"><a href="#" data-target="info">Info</a></li>
+                    <li><a href="#" data-target="pricing">Pricing</a></li>
+                    <li><a href="#" data-target="teaser">Teaser video</a></li>
                 </ul>
             </div>
             <!-- /.program-settings-tabs -->
-            <div class="program-settings-info">
+            <div class="program-settings-info data-target" data-toggleTarget="info">
                 <div class="input-wrapper">
                     <label for="program-settings-name">Program name</label>
                     <input type="text" class="input-text input-text-gray symbols-maxlength" maxlength="150" placeholder="Enter program name" id="program-settings-name" name="program-settings-name">
@@ -306,6 +306,106 @@
                             <span class="symbols-maxlength-current">0</span>/500
                         </div>
                     </div>
+                </div>
+                <!-- /.input-wrapper -->
+            </div>
+            <!-- /.program-settings-info -->
+            <div class="program-settings-info data-target hidden" data-toggleTarget="teaser">
+                <div class="program-settings-cover-title">teaser videos</div>
+                <div class="program-settings-tabs">
+                    <ul class="content-nav-list toggle-active">
+                        <li class="active"><a href="#" data-target="teaser-upload">Upload</a></li>
+                        <li><a href="#" data-target="teaser-embed">Embed</a></li>
+                    </ul>
+                </div>
+                <!-- /.program-settings-tabs -->
+                <div class="data-target" data-toggleTarget="teaser-upload">
+                    <div class="drag-file">
+                        <input type="file" class="drag-file-input" id="drag-file-videos" multiple>
+                        <label for="drag-file-videos" class="drag-file-block">
+                            <span class="drag-file-content">
+                                <span class="drag-file-plus"><i class="fal fa-plus"></i></span>
+                                <span class="drag-file-title">Drag videos here</span>
+                                <span class="drag-file-subtitle">or click to upload</span>
+                                <span class="drag-file-mobile-title">Click to upload (optional)</span>
+                            </span>
+                        </label>
+                        <div class="drag-file-value"></div>
+                    </div>
+                    <!-- /.drag-file -->
+                </div>
+                <div class="data-target hidden" data-toggleTarget="teaser-embed">
+                    <div class="new-program-cover-embed">
+                        <div class="input-wrapper">
+                            <textarea class="textarea" placeholder="Paste your code here..." id="new-program-embed" name="new-program-embed" cols="30" rows="10"></textarea>
+                            <div class="input-wrapper-error">Required field</div>
+                            <div class="input-wrapper-note"><strong>Embedded content from:</strong> YouTube, Vimeo, SproutVideo</div>
+                        </div>
+                        <!-- /.input-wrapper -->
+                    </div>
+                    <!-- /.new-program-cover-embed -->
+                </div>
+            </div>
+            <!-- /.program-settings-info -->
+            <div class="program-settings-info data-target hidden" data-toggleTarget="pricing">
+                <div class="program-settings-cover-title">Status</div>
+                <div class="program-settings-tabs">
+                    <ul class="content-nav-list toggle-active">
+                        <li class="active"><a href="#">Publish</a></li>
+                        <li><a href="#">Private</a></li>
+                    </ul>
+                </div>
+                <!-- /.program-settings-tabs -->
+                <div class="input-wrapper">
+                    <label for="pricing-accessibility">Accessibility</label>
+                    <select class="select" id="pricing-accessibility" name="pricing-accessibility">
+                        <option>Anyone</option>
+                    </select>
+                </div>
+                <!-- /.input-wrapper -->
+                <div class="input-wrapper">
+                    <label for="pricing-standalone-price">Standalone Price (optional)</label>
+                    <div class="input-stack">
+                        <div class="input-stack-value">
+                            <input type="text" class="input-text input-text-gray" placeholder="0" id="pricing-standalone-price" name="pricing-standalone-price">
+                        </div>
+                        <div class="input-stack-option">
+                            <select class="select">
+                                <option>$</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- /.input-stack -->
+                </div>
+                <!-- /.input-wrapper -->
+                <div class="input-wrapper">
+                    <label for="pricing-standalone-validity">Standalone Validity</label>
+                    <div class="input-stack">
+                        <div class="input-stack-value">
+                            <input type="text" class="input-text input-text-gray" placeholder="0" id="pricing-standalone-validity" name="pricing-standalone-validity">
+                        </div>
+                        <div class="input-stack-option">
+                            <select class="select">
+                                <option>Days</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- /.input-stack -->
+                </div>
+                <!-- /.input-wrapper -->
+                <div class="input-wrapper">
+                    <label for="pricing-duration">Duration</label>
+                    <div class="input-stack">
+                        <div class="input-stack-value">
+                            <input type="text" class="input-text input-text-gray" placeholder="0" id="pricing-duration" name="pricing-duration">
+                        </div>
+                        <div class="input-stack-option">
+                            <select class="select">
+                                <option>Days</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- /.input-stack -->
                 </div>
                 <!-- /.input-wrapper -->
             </div>
@@ -378,9 +478,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="custom-attachment.html">
                             <span class="program-sidebar-attachments-icon"><i class="far fa-file"></i></span>
-                            File
+                            Custom
                         </a>
                     </li>
                 </ul>

@@ -139,7 +139,20 @@
                         <div class="program-header-paid">Paid ($56 for 56 Days)</div>
                     </div>
                     <div class="program-header-settings">
-                        <a href="#" class="program-header-settings-button">
+                        <a href="preview.html" class="program-header-settings-button program-header-settings-button-preview">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="20px" viewBox="0 0 19 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="preview" transform="translate(0.000000, 3.000000)" fill="#A4AFB7" fill-rule="nonzero">
+            <path d="M9.49998,1.99998 C12.6583,1.99998 15.475,3.77498 16.85,6.58331 C15.475,9.39165 12.6583,11.1666 9.49998,11.1666 C6.34165,11.1666 3.52498,9.39165 2.14998,6.58331 C3.52498,3.77498 6.34165,1.99998 9.49998,1.99998 Z M9.49998,0.333313 C5.333313,0.333313 1.77498,2.92498 0.333313,6.58331 C1.77498,10.2416 5.333313,12.8333 9.49998,12.8333 C13.6666,12.8333 17.225,10.2416 18.6666,6.58331 C17.225,2.92498 13.6666,0.333313 9.49998,0.333313 Z M9.49998,4.49998 C10.65,4.49998 11.5833,5.43331 11.5833,6.58331 C11.5833,7.73331 10.65,8.66665 9.49998,8.66665 C8.34998,8.66665 7.41665,7.73331 7.41665,6.58331 C7.41665,5.43331 8.34998,4.49998 9.49998,4.49998 Z M9.49998,2.83331 C7.43331,2.83331 5.74998,4.51665 5.74998,6.58331 C5.74998,8.64998 7.43331,10.3333 9.49998,10.3333 C11.5666,10.3333 13.25,8.64998 13.25,6.58331 C13.25,4.51665 11.5666,2.83331 9.49998,2.83331 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>                            <span class="program-header-settings-text">Preview</span>
+                        </a>
+                        <a href="#" class="program-header-settings-button program-header-settings-button-settings">
 <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10.5 0.833313L18.4167 5.41665V14.5833L10.5 19.1666L2.58334 14.5833V5.41665L10.5 0.833313ZM10.5 2.75915L4.25001 6.37748V13.6225L10.5 17.2408L16.75 13.6225V6.37748L10.5 2.75915ZM10.5 13.3333C9.61595 13.3333 8.76811 12.9821 8.14299 12.357C7.51787 11.7319 7.16668 10.884 7.16668 9.99998C7.16668 9.11592 7.51787 8.26808 8.14299 7.64296C8.76811 7.01784 9.61595 6.66665 10.5 6.66665C11.3841 6.66665 12.2319 7.01784 12.857 7.64296C13.4822 8.26808 13.8333 9.11592 13.8333 9.99998C13.8333 10.884 13.4822 11.7319 12.857 12.357C12.2319 12.9821 11.3841 13.3333 10.5 13.3333ZM10.5 11.6666C10.942 11.6666 11.366 11.4911 11.6785 11.1785C11.9911 10.8659 12.1667 10.442 12.1667 9.99998C12.1667 9.55795 11.9911 9.13403 11.6785 8.82147C11.366 8.50891 10.942 8.33331 10.5 8.33331C10.058 8.33331 9.63406 8.50891 9.3215 8.82147C9.00894 9.13403 8.83334 9.55795 8.83334 9.99998C8.83334 10.442 9.00894 10.8659 9.3215 11.1785C9.63406 11.4911 10.058 11.6666 10.5 11.6666Z" fill="#A4AFB7"/>
 </svg>
@@ -420,6 +433,7 @@
                         </div>
                         <!-- /.input-wrapper -->
                         <div class="program-video-content-nav">
+                            <div class="program-video-tabs"></div>
                             <div class="program-video-availability">
                                 <a href="#" class="program-video-availability-button">
                                     <span class="program-video-availability-icon"><i class="far fa-lock-alt"></i></span>
@@ -524,13 +538,13 @@
             <!-- /.program-settings-cover -->
             <div class="program-settings-tabs">
                 <ul class="content-nav-list toggle-active">
-                    <li class="active"><a href="#">Info</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Teaser video</a></li>
+                    <li class="active"><a href="#" data-target="info">Info</a></li>
+                    <li><a href="#" data-target="pricing">Pricing</a></li>
+                    <li><a href="#" data-target="teaser">Teaser video</a></li>
                 </ul>
             </div>
             <!-- /.program-settings-tabs -->
-            <div class="program-settings-info">
+            <div class="program-settings-info data-target" data-toggleTarget="info">
                 <div class="input-wrapper">
                     <label for="program-settings-name">Program name</label>
                     <input type="text" class="input-text input-text-gray symbols-maxlength" maxlength="150" placeholder="Enter program name" id="program-settings-name" name="program-settings-name">
@@ -551,6 +565,106 @@
                             <span class="symbols-maxlength-current">0</span>/500
                         </div>
                     </div>
+                </div>
+                <!-- /.input-wrapper -->
+            </div>
+            <!-- /.program-settings-info -->
+            <div class="program-settings-info data-target hidden" data-toggleTarget="teaser">
+                <div class="program-settings-cover-title">teaser videos</div>
+                <div class="program-settings-tabs">
+                    <ul class="content-nav-list toggle-active">
+                        <li class="active"><a href="#" data-target="teaser-upload">Upload</a></li>
+                        <li><a href="#" data-target="teaser-embed">Embed</a></li>
+                    </ul>
+                </div>
+                <!-- /.program-settings-tabs -->
+                <div class="data-target" data-toggleTarget="teaser-upload">
+                    <div class="drag-file">
+                        <input type="file" class="drag-file-input" id="drag-file-videos" multiple>
+                        <label for="drag-file-videos" class="drag-file-block">
+                            <span class="drag-file-content">
+                                <span class="drag-file-plus"><i class="fal fa-plus"></i></span>
+                                <span class="drag-file-title">Drag videos here</span>
+                                <span class="drag-file-subtitle">or click to upload</span>
+                                <span class="drag-file-mobile-title">Click to upload (optional)</span>
+                            </span>
+                        </label>
+                        <div class="drag-file-value"></div>
+                    </div>
+                    <!-- /.drag-file -->
+                </div>
+                <div class="data-target hidden" data-toggleTarget="teaser-embed">
+                    <div class="new-program-cover-embed">
+                        <div class="input-wrapper">
+                            <textarea class="textarea" placeholder="Paste your code here..." id="new-program-embed" name="new-program-embed" cols="30" rows="10"></textarea>
+                            <div class="input-wrapper-error">Required field</div>
+                            <div class="input-wrapper-note"><strong>Embedded content from:</strong> YouTube, Vimeo, SproutVideo</div>
+                        </div>
+                        <!-- /.input-wrapper -->
+                    </div>
+                    <!-- /.new-program-cover-embed -->
+                </div>
+            </div>
+            <!-- /.program-settings-info -->
+            <div class="program-settings-info data-target hidden" data-toggleTarget="pricing">
+                <div class="program-settings-cover-title">Status</div>
+                <div class="program-settings-tabs">
+                    <ul class="content-nav-list toggle-active">
+                        <li class="active"><a href="#">Publish</a></li>
+                        <li><a href="#">Private</a></li>
+                    </ul>
+                </div>
+                <!-- /.program-settings-tabs -->
+                <div class="input-wrapper">
+                    <label for="pricing-accessibility">Accessibility</label>
+                    <select class="select" id="pricing-accessibility" name="pricing-accessibility">
+                        <option>Anyone</option>
+                    </select>
+                </div>
+                <!-- /.input-wrapper -->
+                <div class="input-wrapper">
+                    <label for="pricing-standalone-price">Standalone Price (optional)</label>
+                    <div class="input-stack">
+                        <div class="input-stack-value">
+                            <input type="text" class="input-text input-text-gray" placeholder="0" id="pricing-standalone-price" name="pricing-standalone-price">
+                        </div>
+                        <div class="input-stack-option">
+                            <select class="select">
+                                <option>$</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- /.input-stack -->
+                </div>
+                <!-- /.input-wrapper -->
+                <div class="input-wrapper">
+                    <label for="pricing-standalone-validity">Standalone Validity</label>
+                    <div class="input-stack">
+                        <div class="input-stack-value">
+                            <input type="text" class="input-text input-text-gray" placeholder="0" id="pricing-standalone-validity" name="pricing-standalone-validity">
+                        </div>
+                        <div class="input-stack-option">
+                            <select class="select">
+                                <option>Days</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- /.input-stack -->
+                </div>
+                <!-- /.input-wrapper -->
+                <div class="input-wrapper">
+                    <label for="pricing-duration">Duration</label>
+                    <div class="input-stack">
+                        <div class="input-stack-value">
+                            <input type="text" class="input-text input-text-gray" placeholder="0" id="pricing-duration" name="pricing-duration">
+                        </div>
+                        <div class="input-stack-option">
+                            <select class="select">
+                                <option>Days</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- /.input-stack -->
                 </div>
                 <!-- /.input-wrapper -->
             </div>
@@ -900,9 +1014,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="custom-attachment.html">
                             <span class="program-sidebar-attachments-icon"><i class="far fa-file"></i></span>
-                            File
+                            Custom
                         </a>
                     </li>
                 </ul>
