@@ -176,6 +176,19 @@
                     border-radius: 10px;
                     &:hover {
                         color: $theme-primary;
+                        .program-sidebar-attachments-input {
+                            color: $theme-primary;
+                        }
+                        .program-sidebar-attachments-edit {
+                            i {
+                                color: $theme-text-tertiary;
+                            }
+                            &:hover {
+                                i {
+                                    color: $theme-text;
+                                }
+                            }
+                        }
                         svg path {
                             fill: $theme-text;
                         }
@@ -189,6 +202,19 @@
                         color: $theme-text;
                         background-color: #E8EDF5;
                         border-color: rgba(58, 102, 237, 0.25);
+                        .program-sidebar-attachments-input {
+                            color: $theme-text;
+                        }
+                        .program-sidebar-attachments-edit {
+                            i {
+                                color: $theme-text;
+                            }
+                            &:hover {
+                                i {
+                                    color: $theme-primary;
+                                }
+                            }
+                        }
                         svg path {
                             fill: $theme-secondary;
                         }
@@ -196,6 +222,44 @@
                             color: $theme-secondary;
                         }
                     }
+                }
+            }
+            &-input {
+                display: block;
+                width: 100%;
+                height: 20px;
+                padding: 0 26px 0 0;
+                font-size: 14px;
+                line-height: normal;
+                font-weight: 500;
+                color: $theme-text;
+                border: 0;
+                background-color: $theme-transparent;
+                border-radius: 0;
+                transition: color $d $f;
+                &::placeholder {
+                    color: $theme-text-secondary;
+                }
+                &.readonly {
+                    background-color: transparent;
+                    user-select: none;
+                    pointer-events: none;
+                }
+            }
+            &-edit {
+                position: absolute;
+                z-index: 2;
+                top: 0;
+                right: 0;
+                width: 36px;
+                height: 38px;
+                padding: 12px 0;
+                text-align: center;
+                i {
+                    font-size: 14px;
+                    vertical-align: top;
+                    color: $theme-text-tertiary;
+                    transition: color $d $f;
                 }
             }
             &-icon {
@@ -317,7 +381,7 @@
                 &-text {
                     width: 100%;
                     height: 34px;
-                    padding: 2px 5px 4px;
+                    padding: 4px 5px;
                     font-size: 16px;
                     line-height: normal;
                     font-weight: 500;
@@ -377,10 +441,9 @@
                 .ui-state-highlight {
                     display: block;
                     height: 40px;
-                    background: transparent;
                     border-radius: 10px;
-                    border: 1px dashed rgba(164,175,183,0.5);
-                    background: rgba(164,175,183,0.15);
+                    border: 1px dashed rgba(164, 175, 183, 0.5);
+                    background: rgba(164, 175, 183, 0.15);
                 }
             }
         }

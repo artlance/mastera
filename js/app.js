@@ -215,10 +215,31 @@ $(document).ready(function () {
         $('#modal-category-name').parents('.input-wrapper').find('.symbols-maxlength-current').text('0');
     });
 
-    //
-
-    $('.program-sidebar .program-sidebar-attachments').sortable({
+    //program sidebar attachments sortable
+    $('.program-sidebar-categories .program-sidebar-attachments').sortable({
         placeholder: "ui-state-highlight"
+    });
+
+    //-----------------------------------------//
+
+    //program sidebar attachments edit
+    $(document).on('click', '.program-sidebar-attachments-edit', function (event) {
+        event.preventDefault();
+        var thisParents = $(this).parents('a');
+        var thisInput = thisParents.find('.program-sidebar-attachments-input');
+        thisInput.removeClass('readonly').attr('readonly', false).focus();
+        var thisInputVal = thisInput.val();
+        thisInput.val('').val(thisInputVal);
+    });
+
+    $(document).on('focusout', '.program-sidebar-attachments-input', function (event) {
+        $(this).addClass('readonly').attr('readonly', true);
+    });
+    $(document).on('keypress', '.program-sidebar-attachments-input', function (event) {
+        var thisElement = $(this);
+        if (event.which == 13) {
+            thisElement.addClass('readonly').attr('readonly', true);
+        }
     });
 
     //-----------------------------------------//
@@ -350,6 +371,22 @@ $(document).ready(function () {
         connectWith: ".quiz-question-item",
         handle: ".quiz-question-dragg",
         placeholder: "quiz-placeholder"
+    });
+
+    //-----------------------------------------//
+
+    //program conversation hide
+    $(document).on('click', '.program-profile-conversation-hide', function (event) {
+        event.preventDefault();
+        $(this).parents('.program-profile-conversation').toggleClass('program-profile-conversation-hidden');
+    });
+
+    //-----------------------------------------//
+
+    //program conversation answer hide
+    $(document).on('click', '.program-profile-conversation-answer-hide', function (event) {
+        event.preventDefault();
+        $(this).parents('.program-profile-conversation-answer').toggleClass('program-profile-conversation-answer-hidden');
     });
 
     //-----------------------------------------//
