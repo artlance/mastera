@@ -391,4 +391,12 @@ $(document).ready(function () {
 
     //-----------------------------------------//
 
+    //program profile quiz toggle
+    $(document).on('click', '.program-profile-quiz-caption-toggle', function (event) {
+        event.preventDefault();
+        $(this).parents('.program-profile-quiz-item').toggleClass('open');
+    });
+
+    //-----------------------------------------//
+
 });//document ready

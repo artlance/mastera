@@ -244,6 +244,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    &-push {
+        height: 0;
+        width: 0;
+        font-size: 0;
+        line-height: 0;
+    }
     &-show {
         display: flex;
         align-items: center;
@@ -671,8 +677,8 @@
                 margin-left: 10px;
                 text-align: center;
                 color: var(--theme-red);
-                background: rgba(243,83,94,0.05);
-                border: 1px solid rgba(243,83,94,0.25);
+                background: rgba(243, 83, 94, 0.05);
+                border: 1px solid rgba(243, 83, 94, 0.25);
                 border-radius: 10px;
                 &:hover {
                     color: var(--theme-red);

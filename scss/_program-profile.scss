@@ -427,8 +427,495 @@
         }
     }
     &-customers {
-        display: none;
         padding-bottom: 8px;
+        &-navigation {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        &-search {
+            flex-grow: 1;
+            padding-bottom: 8px;
+        }
+        &-add {
+            flex: 0 0 218px;
+            max-width: 218px;
+            padding: 0 0 8px 8px;
+            .button {
+                width: 100%;
+            }
+        }
+        &-list {
+            padding: 34px 24px 25px;
+            margin-bottom: 20px;
+            background: $theme-white;
+            box-shadow: 0px 5px 11px rgba(0, 0, 0, 0.06);
+            border-radius: 15px;
+            table {
+                width: 100%;
+                border-spacing: 0;
+                th {
+                    padding: 0 0 12px 10px;
+                    border: 0;
+                    vertical-align: top;
+                    &:first-child {
+                        padding-left: 70px;
+                    }
+                }
+                td {
+                    padding: 15px 0 15px 10px;
+                    border: 0;
+                    border-top: 1px solid $theme-quaternary;
+                    vertical-align: middle;
+                    &:first-child {
+                        width: 32.74%;
+                        padding-left: 20px;
+                    }
+                    &:last-child {
+                        width: 156px;
+                        padding-right: 20px;
+                    }
+                    &.col-5 {
+                        width: 190px;
+                    }
+                }
+            }
+        }
+        &-caption {
+            display: flex;
+            align-items: flex-start;
+        }
+        &-title,
+        &-title-mobile {
+            padding: 7px 0 3px;
+            font-size: 9px;
+            line-height: 1.334;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+            color: $theme-text-tertiary;
+        }
+        &-title-mobile {
+            display: none;
+            padding: 0;
+        }
+        &-sorting {
+            flex: 0 0 26px;
+            max-width: 26px;
+            height: 22px;
+            position: relative;
+            &-up,
+            &-down {
+                position: absolute;
+                left: 0;
+                right: 0;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                text-align: center;
+                font-size: 10px;
+                color: $theme-text-tertiary;
+                &:hover {
+                    color: $theme-text;
+                }
+                i {
+                    vertical-align: top;
+                }
+            }
+            &-up {
+                bottom: 9px;
+                top: -5px;
+                z-index: 2;
+            }
+            &-down {
+                top: 10px;
+                bottom: -6px;
+                align-items: flex-start;
+            }
+        }
+        &-user {
+            display: flex;
+            align-items: center;
+            &-thumb {
+                flex: 0 0 50px;
+                max-width: 50px;
+                padding-right: 12px;
+                img {
+                    width: 100%;
+                    border-radius: 50%;
+                }
+            }
+            &-info {
+                flex-grow: 1;
+            }
+            &-name {
+                font-size: 15px;
+                line-height: 1.334;
+                font-weight: 500;
+                padding: 2px 0 1px;
+            }
+            &-email {
+                font-size: 13px;
+                line-height: 1.385;
+                color: $theme-text-secondary;
+            }
+        }
+        &-date {}
+        &-completion {
+            display: flex;
+            align-items: center;
+            &-range {
+                flex: 0 0 134px;
+                max-width: 134px;
+                height: 6px;
+                border-radius: 3px;
+                background: $theme-quaternary;
+                position: relative;
+            }
+            &-progress {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                background: $theme-secondary;
+                border-radius: 3px;
+            }
+            &-text {
+                flex-grow: 1;
+                padding-left: 8px;
+            }
+        }
+        &-options {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+            margin: 0 -10px;
+            &-button {
+                padding: 5px 10px;
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 20px;
+                    height: 20px;
+                    font-size: 17px;
+                    color: $theme-text-tertiary;
+                    svg {
+                        display: inline-block;
+                        vertical-align: top;
+                        margin: 0;
+                        path {
+                            transition: fill $d $f;
+                            will-change: fill;
+                        }
+                    }
+                    i {
+                        vertical-align: top;
+                    }
+                    &:hover {
+                        color: $theme-primary;
+                        svg path {
+                            fill: $theme-primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-quiz {
+        &-item {
+            margin-bottom: 10px;
+            background: $theme-white;
+            box-shadow: 0px 5px 11px rgba(0, 0, 0, 0.06);
+            border-radius: 15px;
+            &.open {
+                .program-profile-quiz-content {
+                    display: block;
+                }
+                .program-profile-quiz-caption {
+                    &-arrow {
+                        transform: rotate(-180deg);
+                    }
+                    &-select {
+                        display: block;
+                    }
+                }
+            }
+        }
+        &-caption {
+            display: flex;
+            align-items: flex-start;
+            &-toggle {
+                flex-grow: 1;
+                display: block;
+                position: relative;
+                padding: 28px 20px 28px 59px;
+                &:hover {
+                    .program-profile-quiz-caption-arrow {
+                        i {
+                            color: $theme-text;
+                        }
+                    }
+                }
+            }
+            &-arrow {
+                position: absolute;
+                left: 20px;
+                top: 30px;
+                width: 24px;
+                height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform $d $f;
+                will-change: transform;
+                i {
+                    vertical-align: top;
+                    color: $theme-text-tertiary;
+                    transition: color $d $f;
+                }
+            }
+            &-text {
+                display: block;
+                font-size: 20px;
+                line-height: 1.4;
+                font-weight: bold;
+                color: $theme-text;
+            }
+            &-select {
+                display: none;
+                flex: 0 0 162px;
+                max-width: 162px;
+                padding: 20px 20px 20px 0;
+            }
+        }
+        &-content {
+            display: none;
+            padding: 0 20px 18px;
+        }
+        &-info {
+            display: flex;
+            align-items: flex-start;
+            margin-top: -7px;
+            padding-bottom: 16px;
+            &-title {
+                margin-bottom: 3px;
+                font-size: 9px;
+                line-height: 1.334;
+                letter-spacing: 1.8px;
+                text-transform: uppercase;
+                color: $theme-text-secondary;
+            }
+            &-text {
+                font-size: 16px;
+                line-height: 1.75;
+                margin-bottom: 15px;
+            }
+        }
+        &-question {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: 0 20px 0 39px;
+        }
+        &-answers {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding-left: 3px;
+        }
+        &-answer {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 4px;
+            &-number {
+                flex: 0 0 24px;
+                max-width: 24px;
+                height: 24px;
+                margin: 2px 0;
+                text-align: center;
+                font-size: 12px;
+                line-height: 2;
+                color: $theme-text-secondary;
+                white-space: nowrap;
+                overflow: hidden;
+                border-radius: 50%;
+                background: $theme-light-gray;
+            }
+            &-text {
+                flex-grow: 1;
+                padding-left: 8px;
+                font-size: 16px;
+                line-height: 1.75;
+            }
+        }
+        &-list {
+            margin-bottom: 10px;
+            border-bottom: 1px solid $theme-quaternary;
+            table {
+                width: 100%;
+                border-spacing: 0;
+                th {
+                    padding: 11px 0 13px 10px;
+                    border: 0;
+                    border-top: 1px solid $theme-quaternary;
+                    vertical-align: top;
+                    &:first-child {
+                        padding-left: 70px;
+                    }
+                }
+                td {
+                    padding: 16px 0 15px 10px;
+                    border: 0;
+                    border-top: 1px solid $theme-quaternary;
+                    vertical-align: middle;
+                    &:first-child {
+                        width: 33.241%;
+                        padding-left: 20px;
+                    }
+                    &:last-child {
+                        padding-right: 20px;
+                    }
+                    &.col-2 {
+                        width: 11.76%;
+                    }
+                }
+            }
+        }
+        &-user {
+            &-date {
+                padding-top: 2px;
+            }
+            &-answer {
+                max-width: 564px;
+                position: relative;
+                padding: 2px 0 0 32px;
+                &-icon {
+                    position: absolute;
+                    left: 0;
+                    top: 1px;
+                    width: 20px;
+                    height: 20px;
+                    color: $theme-green;
+                    &-red {
+                        color: $theme-red;
+                    }
+                    &-gray {
+                        color: $theme-gray;
+                    }
+                    i {
+                        vertical-align: top;
+                        font-size: 20px;
+                    }
+                }
+                &-text {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    strong {
+                        font-weight: normal;
+                        color: $theme-text-tertiary;
+                        margin-right: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1399.98px) {
+    .program-profile {
+        &-customers {
+            &-list {
+                table {
+                    th {
+                        &:first-child {
+                            padding-left: 50px;
+                        }
+                    }
+                    td {
+                        &:first-child {
+                            width: 28%;
+                            padding-left: 0;
+                        }
+                        &:last-child {
+                            width: 110px;
+                            padding-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+        &-quiz {
+            &-list {
+                table {
+                    th {
+                        &:first-child {
+                            padding-left: 50px;
+                        }
+                    }
+                    td {
+                        &:first-child {
+                            padding-left: 0;
+                        }
+                        &:last-child {
+                            padding-right: 0;
+                        }
+                    }
+                }
+            }
+            &-user {
+                &-answer {
+                    max-width: 444px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1199.98px) {
+    .program-profile {
+        &-customers {
+            &-list {
+                padding-left: 20px;
+                padding-right: 20px;
+                table {
+                    td {
+                        &:first-child {
+                            width: 30%;
+                        }
+                        &:last-child {
+                            width: 30px;
+                        }
+                        &.col-5 {
+                            width: 146px;
+                        }
+                    }
+                }
+            }
+            &-completion {
+                &-range {
+                    flex: 0 0 90px;
+                    max-width: 90px;
+                }
+            }
+        }
+        &-quiz {
+            &-list {
+                table {
+                    td {
+                        &:first-child {
+                            width: 35%;
+                        }
+                        &.col-2 {
+                            width: 15%;
+                        }
+                    }
+                }
+            }
+            &-user {
+                &-answer {
+                    max-width: 300px;
+                }
+            }
+        }
     }
 }
 @media (max-width: 767.98px) {
@@ -518,6 +1005,145 @@
                     &-content {
                         padding-left: 45px;
                     }
+                }
+            }
+        }
+        &-customers {
+            &-navigation {
+                flex-wrap: wrap;
+            }
+            &-search {
+                flex: 0 0 100%;
+                max-width: 100%;
+                order: 2;
+            }
+            &-add {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding-left: 0;
+            }
+            &-list {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                table {
+                    display: block;
+                    thead {
+                        display: none;
+                    }
+                    tbody {
+                        display: block;
+                        tr {
+                            display: flex;
+                            flex-wrap: wrap;
+                            padding-top: 16px;
+                            border-top: 1px solid $theme-quaternary;
+                            &:first-child {
+                                border-top: 0;
+                            }
+                        }
+                    }
+                    td {
+                        flex: 1 1 0;
+                        max-width: 100%;
+                        padding: 0 10px 16px 0;
+                        border-top: 0;
+                        vertical-align: top;
+                        &:first-child,
+                        &:last-child,
+                        &.col-5 {
+                            flex: 0 0 100%;
+                            max-width: 100%;
+                            width: auto;
+                            padding-right: 0;
+                        }
+                        &.col-5 {
+                            padding-bottom: 8px;
+                        }
+                    }
+                }
+            }
+            &-title-mobile {
+                display: block;
+                margin-bottom: 4px;
+            }
+            &-completion {
+                &-range {
+                    flex: 0 0 200px;
+                    max-width: 200px;
+                }
+            }
+            &-options {
+                justify-content: flex-start;
+            }
+        }
+        &-quiz {
+            &-caption {
+                flex-wrap: wrap;
+                &-toggle {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    padding: 20px 20px 20px 44px;
+                }
+                &-arrow {
+                    top: 22px;
+                    left: 10px;
+                }
+                &-select {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    padding-top: 0;
+                    padding-left: 20px;
+                }
+            }
+            &-info {
+                margin-top: 0;
+                flex-wrap: wrap;
+            }
+            &-question,
+            &-answers {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+            &-list {
+                table {
+                    display: block;
+                    thead {
+                        display: none;
+                    }
+                    tbody {
+                        display: block;
+                        tr {
+                            display: flex;
+                            flex-wrap: wrap;
+                            padding-top: 16px;
+                            border-top: 1px solid $theme-quaternary;
+                        }
+                    }
+                    td {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        padding: 0 0 16px;
+                        border-top: 0;
+                        vertical-align: top;
+                        &:first-child,
+                        &.col-2 {
+                            flex: 0 0 100%;
+                            max-width: 100%;
+                            width: auto;
+                        }
+                        &.col-2 {
+                            padding-bottom: 10px;
+                        }
+                    }
+                }
+            }
+            &-user {
+                &-date {
+                    padding-top: 0;
+                }
+                &-answer {
+                    max-width: 100%;
                 }
             }
         }
