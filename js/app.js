@@ -399,4 +399,18 @@ $(document).ready(function () {
 
     //-----------------------------------------//
 
+    //program profile quiz panel
+    $(document).on('click', '.program-profile-quiz-user', function (event) {
+        event.preventDefault();
+        $('.program-profile-quiz-panel').addClass('show');
+    });
+
+    $(document).on('click', '.program-profile-quiz-panel-close, .program-profile-quiz-panel-back', function (event) {
+        event.preventDefault();
+        $('.program-profile-quiz-panel').removeClass('show');
+    });
+
+    //-----------------------------------------//
+
+
 });//document ready

@@ -1,3 +1,8 @@
+.no-js {
+    .program-profile-quiz-panel {
+        display: none;
+    }
+}
 .program-profile {
     &-caption {
         display: flex;
@@ -746,6 +751,18 @@
                 font-size: 16px;
                 line-height: 1.75;
             }
+            &-correct {
+                .program-profile-quiz-answer-number {
+                    color: $theme-green;
+                    background: rgba(37, 193, 112, 0.1);
+                }
+            }
+            &-incorrect {
+                .program-profile-quiz-answer-number {
+                    color: $theme-red;
+                    background: #FEEEEF;
+                }
+            }
         }
         &-list {
             margin-bottom: 10px;
@@ -781,6 +798,7 @@
             }
         }
         &-user {
+            cursor: pointer;
             &-date {
                 padding-top: 2px;
             }
@@ -814,6 +832,187 @@
                         font-weight: normal;
                         color: $theme-text-tertiary;
                         margin-right: 8px;
+                    }
+                }
+            }
+        }
+        &-panel {
+            position: fixed;
+            z-index: 3700;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            padding: 21px 20px 20px;
+            background: $theme-white;
+            box-shadow: -1px 0px 0px #F2F2F2;
+            transform: translateX(101%);
+            transition: transform $d*2 $f;
+            will-change: transform;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            overflow-scrolling: touch;
+            &::-webkit-scrollbar {
+                width: 8px;
+                height: 8px;
+            }
+            &::-webkit-scrollbar-track {
+                background: $tr;
+                border-radius: 0;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: $theme-text-tertiary;
+                border-radius: 4px;
+                outline: none;
+            }
+            &::-webkit-scrollbar-button {
+                width: 0;
+                height: 0;
+                display: none;
+            }
+            &::-webkit-scrollbar-corner {
+                background: $tr;
+            }
+            &.show {
+                transform: translateX(0);
+            }
+            &-caption {
+                display: flex;
+                align-items: center;
+                margin-bottom: 19px;
+            }
+            &-back {
+                display: none;
+                flex: 0 0 24px;
+                max-width: 24px;
+                height: 28px;
+                margin-right: 16px;
+                padding: 5px 0;
+                font-size: 18px;
+                color: $theme-text;
+                text-align: center;
+                &:hover {
+                    color: $theme-text;
+                }
+                i {
+                    vertical-align: top;
+                }
+            }
+            &-user {
+                flex-grow: 1;
+            }
+            &-close {
+                flex: 0 0 24px;
+                max-width: 24px;
+                height: 24px;
+                margin-left: 10px;
+                padding: 3px 0;
+                font-size: 18px;
+                color: $theme-text;
+                text-align: center;
+                opacity: 0.5;
+                transition: opacity $d $f;
+                &:hover {
+                    color: $theme-text;
+                    opacity: 1;
+                }
+                i {
+                    vertical-align: top;
+                }
+            }
+            &-content {}
+            &-date {
+                margin-bottom: 8px;
+                font-size: 12px;
+                line-height: 1.334;
+                color: $theme-text-tertiary;
+            }
+            &-answers {
+                padding-bottom: 18px;
+                .program-profile-quiz-answer {
+                    margin-bottom: 0;
+                    &-text {
+                        margin: 4px 0;
+                        font-size: 14px;
+                        line-height: 1.43;
+                    }
+                }
+            }
+            &-result {
+                padding: 9px 10px;
+                font-size: 12px;
+                line-height: 1.5;
+                text-align: center;
+                color: $theme-green;
+                background: rgba(37, 193, 112, 0.1);
+                border-radius: 8px;
+                &-incorrect {
+                    color: $theme-red;
+                    background: #FEEEEF;
+                }
+                i {
+                    margin-right: 3px;
+                    font-size: 17px;
+                    vertical-align: top;
+                }
+                strong {
+                    margin-left: 3px;
+                    font-weight: normal;
+                    color: $theme-text;
+                }
+            }
+            &-answer {
+                padding-top: 2px;
+                margin-bottom: 21px;
+                p {
+                    margin-bottom: 20px;
+                }
+            }
+            &-subtitle {
+                margin-bottom: 19px;
+                font-size: 9px;
+                line-height: 1.334;
+                letter-spacing: 1.9px;
+                text-transform: uppercase;
+                color: $theme-text-secondary;
+            }
+            &-cta {
+                display: flex;
+                margin: 0 -4px;
+                &-button {
+                    flex: 1 1 0;
+                    max-width: 100%;
+                    padding: 0 4px;
+                    a {
+                        display: block;
+                        padding: 8px 4px;
+                        font-size: 12px;
+                        line-height: 1.5;
+                        text-align: center;
+                        color: $theme-green;
+                        background: #EAF9F1;
+                        border: 1px solid $theme-green;
+                        border-radius: 8px;
+                        i {
+                            margin-right: 3px;
+                            font-size: 17px;
+                            vertical-align: top;
+                        }
+                        &:hover {
+                            color: $theme-white;
+                            background-color: $theme-green;
+                        }
+                    }
+                    &-red {
+                        a {
+                            color: $theme-red;
+                            background: #FEEEEF;
+                            border-color: $theme-red;
+                            &:hover {
+                                color: $theme-white;
+                                background-color: $theme-red;
+                            }
+                        }
                     }
                 }
             }
@@ -1144,6 +1343,20 @@
                 }
                 &-answer {
                     max-width: 100%;
+                }
+            }
+            &-panel {
+                width: 100%;
+                padding: 18px 16px 16px;
+                box-shadow: none;
+                &-caption {
+                    margin-bottom: 31px;
+                }
+                &-back {
+                    display: block;
+                }
+                &-close {
+                    display: none;
                 }
             }
         }
