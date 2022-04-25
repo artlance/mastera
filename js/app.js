@@ -412,5 +412,433 @@ $(document).ready(function () {
 
     //-----------------------------------------//
 
+    const chartColors1 = ['#3A66ED', '#F5717A', '#FBC563', '#99DC13', '#DFDFDF'],
+        chartColors2 = ['#3F68E5', '#7994EB', '#8CA3EE', '#B2C2F4', '#C7D4FB'];
+
+    const getOrCreateLegendList = (chart, id) => {
+        const legendContainer = document.getElementById(id);
+        let listContainer = legendContainer.querySelector('ul');
+
+        if (!listContainer) {
+            listContainer = document.createElement('ul');
+
+            legendContainer.appendChild(listContainer);
+        }
+
+        return listContainer;
+    };
+
+    const htmlLegendPlugin = {
+        id: 'htmlLegend',
+        afterUpdate(chart, args, options) {
+            const ul = getOrCreateLegendList(chart, options.containerID);
+            ul.classList.add('chart-legend-ul');
+
+            // Remove old legend items
+            while (ul.firstChild) {
+                ul.firstChild.remove();
+            }
+
+            // Reuse the built-in legendItems generator
+            const items = chart.options.plugins.legend.labels.generateLabels(chart);
+
+            items.forEach((item, index) => {
+                const li = document.createElement('li');
+
+                li.onclick = () => {
+                    const { type } = chart.config;
+                    if (type === 'pie' || type === 'doughnut') {
+                        // Pie and doughnut charts only have a single dataset and visibility is per item
+                        chart.toggleDataVisibility(item.index);
+                    } else {
+                        chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
+                    }
+                    chart.update();
+                };
+
+                // Color box
+                const boxSpan = document.createElement('span');
+                boxSpan.classList.add('chart-legend-icon');
+                boxSpan.style.background = item.fillStyle;
+                boxSpan.style.borderColor = item.strokeStyle;
+                boxSpan.style.borderWidth = item.lineWidth + 'px';
+
+                // Text
+                const textContainer = document.createElement('p');
+                textContainer.style.color = item.fontColor;
+                textContainer.style.textDecoration = item.hidden ? 'line-through' : '';
+
+                const text = document.createElement('span');
+                text.innerHTML = '<span class="chart-legend-label">' + item.text + '</span><span class="chart-legend-value"> ' + chart.data.datasets[0].data[index] + '</span>';
+                textContainer.appendChild(text);
+
+                li.appendChild(boxSpan);
+                li.appendChild(textContainer);
+                ul.appendChild(li);
+            });
+        }
+    };
+
+    if ($('#chart-profile-trend').length) {
+
+        var chart = document.getElementById('chart-profile-trend').getContext('2d'),
+            gradient = chart.createLinearGradient(0, 0, 0, 330);
+
+        gradient.addColorStop(0, 'rgba(60, 104, 236, 0.2)');
+        gradient.addColorStop(0.5, 'rgba(60, 104, 236, 0.15)');
+        gradient.addColorStop(1, 'rgba(60, 104, 236, 0)');
+
+        var data = {
+            labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
+            datasets: [{
+                label: 'Enrolls',
+                pointWith: 20,
+                pointHeight: 20,
+                backgroundColor: gradient,
+                pointBackgroundColor: '#3A66ED',
+                pointBorderWidth: 3,
+                pointBorderColor: '#ffffff',
+                borderWidth: 3,
+                borderColor: '#3A66ED',
+                fill: true,
+                data: [0, 100, 40, 80, 42, 18, 60, 80, 30],
+                hoverBorderWidth: 3,
+                hoverBorderColor: '#ffffff'
+            },
+            {
+                label: 'Earnings',
+                pointWith: 20,
+                pointHeight: 20,
+                backgroundColor: 'transparent',
+                pointBackgroundColor: '#F6C161',
+                pointBorderWidth: 3,
+                pointBorderColor: '#ffffff',
+                borderWidth: 3,
+                borderColor: '#F6C161',
+                fill: true,
+                data: [0, 30, 90, 100, 52, 30, 18, 60, 80],
+                hoverBorderWidth: 3,
+                hoverBorderColor: '#ffffff'
+            }]
+        };
+
+        var options = {
+            interaction: {
+                intersect: false,
+                mode: 'index',
+            },
+            responsive: true,
+            maintainAspectRatio: true,
+            aspectRatio: 2.85,
+            animation: {
+                easing: 'easeInOutQuad',
+                duration: 520
+            },
+            radius: 6,
+            hoverRadius: 6,
+            scales: {
+                x: {
+                    grid: {
+                        display: false,
+                        tickColor: '#ffffff',
+                        borderColor: 'transparent',
+                    },
+                    ticks: {
+                        color: '#6D6D6D',
+                    },
+                },
+                y: {
+                    grid: {
+                        //display: false,
+                        tickColor: '#ffffff',
+                        borderColor: '#F2F2F2',
+                        borderDash: [5, 5],
+                        drawBorder: false
+                    },
+                    ticks: {
+                        display: false
+                        //color: 'transparent',
+                    },
+                },
+
+            },
+            plugins: {
+                legend: false,
+                tooltip: {
+                    backgroundColor: '#fff',
+                    titleColor: '#000',
+                    titleFont: '#000',
+                    bodyColor: '#000',
+                    // xAlign: 'center',
+                    // yAlign: 'center',
+                    borderWidth: 1,
+                    borderColor: 'rgba(0, 0, 0, 0.1)',
+                    displayColors: false,
+                    padding: 12
+                },
+            },
+            point: {
+                backgroundColor: '#8A8B93'
+            },
+        };
+
+        var chartInstance = new Chart(chart, {
+            type: 'line',
+            data: data,
+            options: options
+        });
+
+    }
+
+    //
+
+    if ($('#chart-program-age-distribution').length) {
+
+        var chart = document.getElementById('chart-program-age-distribution').getContext('2d');
+
+        var data = {
+            labels: ['20s', '30s', '40s', '50s', '60+'],
+            datasets: [
+                {
+                    data: [25, 20, 20, 20, 15],
+                    label: '',
+                    backgroundColor: ['#3A66ED', '#F5717A', '#FBC563', '#99DC13', '#DFDFDF'],
+                    borderWidth: 0,
+                    pointStyle: 'circle',
+                }
+            ]
+        };
+
+        var options = {
+            cutout: '65%',
+            responsive: true,
+            maintainAspectRatio: true,
+            aspectRatio: 1.5,
+            animation: {
+                easing: 'easeInOutQuad',
+                duration: 520
+            },
+            scales: {
+                x: {
+                    display: false,
+                },
+                y: {
+                    display: false,
+                },
+
+            },
+            elements: {
+                line: {
+                    tension: 0.4
+                }
+            },
+            point: {
+                backgroundColor: '#8A8B93'
+            },
+            plugins: {
+                htmlLegend: {
+                    containerID: 'legend-program-age-distribution',
+                },
+                legend: {
+                    display: false,
+                    position: 'bottom',
+                    labels: {
+                        boxWidth: 10,
+                        boxHeight: 10,
+                        padding: 20,
+                        usePointStyle: true,
+                    }
+                },
+                tooltip: {
+                    backgroundColor: '#fff',
+                    titleColor: '#000',
+                    titleFont: '#000',
+                    bodyColor: '#000',
+                    // xAlign: 'center',
+                    // yAlign: 'center',
+                    borderWidth: 1,
+                    borderColor: 'rgba(0, 0, 0, 0.1)',
+                    displayColors: false,
+                    padding: 12
+                },
+            }
+        };
+
+        var chartInstance = new Chart(chart, {
+            type: 'doughnut',
+            data: data,
+            options: options,
+            plugins: [htmlLegendPlugin],
+        });
+
+    }
+
+    //
+
+    if ($('#chart-program-gender-distribution').length) {
+
+        var chart = document.getElementById('chart-program-gender-distribution').getContext('2d');
+
+        var data = {
+            labels: ['Women', 'Men'],
+            datasets: [
+                {
+                    data: [25, 250],
+                    label: '',
+                    backgroundColor: ['#F5717A', '#3F68E5'],
+                    borderWidth: 0,
+                    pointStyle: 'cross',
+                }
+            ]
+        };
+
+        var options = {
+            cutout: '65%',
+            responsive: true,
+            maintainAspectRatio: true,
+            aspectRatio: 1.5,
+            animation: {
+                easing: 'easeInOutQuad',
+                duration: 520
+            },
+            scales: {
+                x: {
+                    display: false,
+                },
+                y: {
+                    display: false,
+                },
+
+            },
+            elements: {
+                line: {
+                    tension: 0.4
+                }
+            },
+            point: {
+                backgroundColor: '#8A8B93'
+            },
+            plugins: {
+                htmlLegend: {
+                    containerID: 'legend-program-gender-distribution',
+                },
+                legend: {
+                    display: false,
+                    position: 'bottom',
+                    labels: {
+                        boxWidth: 10,
+                        boxHeight: 10,
+                        padding: 20,
+                        usePointStyle: true,
+                    },
+                },
+                tooltip: {
+                    backgroundColor: '#fff',
+                    titleColor: '#000',
+                    titleFont: '#000',
+                    bodyColor: '#000',
+                    // xAlign: 'center',
+                    // yAlign: 'center',
+                    borderWidth: 1,
+                    borderColor: 'rgba(0, 0, 0, 0.1)',
+                    displayColors: false,
+                    padding: 12
+                },
+            },
+        };
+
+        var chartInstance = new Chart(chart, {
+            type: 'doughnut',
+            data: data,
+            options: options,
+            plugins: [htmlLegendPlugin],
+        });
+
+    }
+
+    //
+
+    if ($('#chart-program-course-completion').length) {
+
+        var chart = document.getElementById('chart-program-course-completion').getContext('2d');
+
+        var data = {
+            labels: ['1 week', '2 weeks', '3 weeks', '4 weeks'],
+            datasets: [
+                {
+                    data: [25, 20, 20, 20],
+                    label: '',
+                    backgroundColor: ['#3A66ED', '#F5717A', '#FBC563', '#DFDFDF', '#99DC13'],
+                    borderWidth: 0,
+                    pointStyle: 'circle',
+                }
+            ]
+        };
+
+        var options = {
+            cutout: '90%',
+            responsive: true,
+            maintainAspectRatio: true,
+            aspectRatio: 1.5,
+            animation: {
+                easing: 'easeInOutQuad',
+                duration: 520
+            },
+            scales: {
+                x: {
+                    display: false,
+                },
+                y: {
+                    display: false,
+                },
+
+            },
+            elements: {
+                line: {
+                    tension: 0.4
+                }
+            },
+            point: {
+                backgroundColor: '#8A8B93'
+            },
+            plugins: {
+                htmlLegend: {
+                    containerID: 'legend-program-course-completion',
+                },
+                legend: {
+                    display: false,
+                    position: 'bottom',
+                    labels: {
+                        boxWidth: 10,
+                        boxHeight: 10,
+                        padding: 20,
+                        usePointStyle: true,
+                    }
+                },
+                tooltip: {
+                    backgroundColor: '#fff',
+                    titleColor: '#000',
+                    titleFont: '#000',
+                    bodyColor: '#000',
+                    // xAlign: 'center',
+                    // yAlign: 'center',
+                    borderWidth: 1,
+                    borderColor: 'rgba(0, 0, 0, 0.1)',
+                    displayColors: false,
+                    padding: 12
+                },
+            }
+        };
+
+        var chartInstance = new Chart(chart, {
+            type: 'doughnut',
+            data: data,
+            options: options,
+            plugins: [htmlLegendPlugin],
+        });
+
+    }
+
+
 
 });//document ready

@@ -18,7 +18,7 @@
     &-last-child {
         margin-bottom: 0;
     }
-    & > label {
+    &>label {
         display: block;
         margin: 0 0 6px;
         font-size: 9px;
@@ -148,9 +148,8 @@ select.select::-ms-expand {
     display: block;
     input {
         display: none;
-        &:checked + label {
-        }
-        &:disabled + label {
+        &:checked+label {}
+        &:disabled+label {
             opacity: 0.3;
         }
     }
@@ -200,10 +199,10 @@ button.button {
     }
 }
 .ui-sortable-handle {
-	-ms-touch-action: none;
-	touch-action: none;
+    -ms-touch-action: none;
+    touch-action: none;
 }
-body > .ui-widget {
+body>.ui-widget {
     position: absolute;
     left: -9999px;
     top: -9999px;
@@ -321,5 +320,57 @@ body > .ui-widget {
     button.button {
         padding-top: 11px;
         padding-bottom: 12px;
+    }
+}
+
+.aspect-ratio {
+    height: 0;
+    padding-bottom: 35%;
+    position: relative;
+    max-width: 100%;
+    canvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+.chart {
+    &-legend {
+        &-ul {
+            list-style: none;
+            margin: 0;
+            padding: 16px 0 0;
+            line-height: 1.2;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 16px;
+            margin-left: -15px;
+            margin-right: -15px;
+            li {
+                position: relative;
+                padding-left: 17px;
+                margin: 17px 15px 0;
+                p {
+                    margin: 0;
+                    display: inline-block;
+                }
+            }
+        }
+        &-label {
+            color: #6D6D6D;
+            margin-right: 4px;
+        }
+        &-icon {
+            left: 0;
+            top: 50%;
+            margin-top: -4px;
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            border-radius: 50%;
+        }
     }
 }

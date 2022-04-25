@@ -1018,6 +1018,126 @@
             }
         }
     }
+    &-analytics {
+        &-info {
+            display: flex;
+            margin-right: -20px;
+            &-block {
+                flex: 1 1 0;
+                max-width: 100%;
+                padding: 24px;
+                margin: 0 20px 20px 0;
+                background: $theme-white;
+                box-shadow: 0px 5px 11px rgba(0, 0, 0, 0.06);
+                border-radius: 15px;
+            }
+            &-content {
+                display: flex;
+                align-items: flex-start;
+            }
+            &-icon {
+                flex: 0 0 48px;
+                max-width: 48px;
+                padding: 2px 18px 0 2px;
+                font-size: 28px;
+                color: $theme-gray;
+                text-align: center;
+                i {
+                    vertical-align: top;
+                }
+            }
+            &-text {
+                flex-grow: 1;
+            }
+            &-number {
+                font-size: 24px;
+                line-height: 1.334;
+                font-weight: bold;
+            }
+            &-title {
+                color: $theme-text-secondary;
+            }
+        }
+        &-graph {
+            padding: 24px;
+            margin-bottom: 20px;
+            background: $theme-white;
+            box-shadow: 0px 5px 11px rgba(0, 0, 0, 0.06);
+            border-radius: 15px;
+            &-caption {
+                display: flex;
+                align-items: flex-start;
+            }
+            &-title {
+                flex-grow: 1;
+                font-size: 16px;
+                line-height: 1.5;
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+            &-period {
+                flex: 0 0 162px;
+                max-width: 162px;
+                padding-left: 20px;
+            }
+            &-total {
+                flex: 0 1 auto;
+                max-width: 100%;
+                padding: 0 0 20px 37px;
+                &-list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-left: -37px;
+                }
+                &-number {
+                    font-size: 24px;
+                    line-height: 1.334;
+                    font-weight: bold;
+                }
+                &-title {
+                    color: $theme-text-secondary;
+                }
+            }
+        }
+        &-diagram {
+            flex: 1 1 0;
+            max-width: 100%;
+            padding: 24px;
+            margin: 0 20px 20px 0;
+            background: $theme-white;
+            box-shadow: 0px 5px 11px rgba(0, 0, 0, 0.06);
+            border-radius: 15px;
+            &-list {
+                display: flex;
+                margin-right: -20px;
+            }
+            &-title {
+                font-size: 16px;
+                line-height: 1.5;
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+        }
+        &-average {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            &-title {
+                font-size: 20px;
+                line-height: 1.4;
+                font-weight: bold;
+                margin-bottom: 4px;
+            }
+            &-subtitle {
+                font-size: 12px;
+                line-height: 1.334;
+                color: $theme-text-secondary;
+            }
+        }
+    }
 }
 
 @media (max-width: 1399.98px) {
@@ -1112,6 +1232,22 @@
             &-user {
                 &-answer {
                     max-width: 300px;
+                }
+            }
+        }
+        &-analytics {
+            &-info {
+                &-block {
+                    padding: 20px;
+                }
+            }
+            &-graph,
+            &-diagram {
+                padding: 20px;
+            }
+            &-average {
+                &-title {
+                    font-size: 16px;
                 }
             }
         }
@@ -1357,6 +1493,37 @@
                 }
                 &-close {
                     display: none;
+                }
+            }
+        }
+        &-analytics {
+            &-info {
+                flex-wrap: wrap;
+                margin-right: 0;
+                &-block {
+                    flex: 0 0 100%;
+                    margin-right: 0;
+                }
+            }
+            &-graph {
+                &-total {
+                    padding-left: 20px;
+                    &-list {
+                        margin-left: -20px;
+                    }
+                }
+            }
+            &-diagram {
+                flex: 0 0 100%;
+                margin-right: 0;
+                &-list {
+                    flex-wrap: wrap;
+                    margin-right: 0;
+                }
+            }
+            &-average {
+                &-title {
+                    font-size: 20px;
                 }
             }
         }

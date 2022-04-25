@@ -204,15 +204,109 @@
                 <!-- /.program-profile-caption -->
                 <div class="program-profile-tabs">
                     <ul class="content-nav-list tabs">
-                        <li><a href="#">Analytics</a></li>
+                        <li class="active"><a href="#">Analytics</a></li>
                         <li><a href="#">Customers</a></li>
                         <li><a href="#">Conversations</a></li>
                         <li><a href="#">Lessons &nbsp;<span>54</span></a></li>
-                        <li class="active"><a href="#">Quiz answers</a></li>
+                        <li><a href="#">Quiz answers</a></li>
                     </ul>
                 </div>
                 <!-- /.program-profile-tabs -->
-                <div class="box"></div>
+                <div class="box visible">
+                    <div class="program-profile-analytics">
+                        <div class="program-profile-analytics-info">
+                            <div class="program-profile-analytics-info-block">
+                                <div class="program-profile-analytics-info-content">
+                                    <div class="program-profile-analytics-info-icon"><i class="fas fa-user-circle"></i></div>
+                                    <div class="program-profile-analytics-info-text">
+                                        <div class="program-profile-analytics-info-number">1,725</div>
+                                        <div class="program-profile-analytics-info-title">Total active members</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.program-profile-analytics-info-block -->
+                            <div class="program-profile-analytics-info-block">
+                                <div class="program-profile-analytics-info-content">
+                                    <div class="program-profile-analytics-info-icon"><i class="fas fa-clock"></i></div>
+                                    <div class="program-profile-analytics-info-text">
+                                        <div class="program-profile-analytics-info-number">2,157</div>
+                                        <div class="program-profile-analytics-info-title">Total lifetime members</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.program-profile-analytics-info-block -->
+                            <div class="program-profile-analytics-info-block">
+                                <div class="program-profile-analytics-info-content">
+                                    <div class="program-profile-analytics-info-icon"><i class="fas fa-arrow-alt-circle-down"></i></div>
+                                    <div class="program-profile-analytics-info-text">
+                                        <div class="program-profile-analytics-info-number">$ 3,220</div>
+                                        <div class="program-profile-analytics-info-title">Total lifetime earnings</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.program-profile-analytics-info-block -->
+                        </div>
+                        <!-- /.program-profile-analytics-info -->
+                        <div class="program-profile-analytics-graph">
+                            <div class="program-profile-analytics-graph-caption">
+                                <div class="program-profile-analytics-graph-title">Enrollment and Earnings trend</div>
+                                <div class="program-profile-analytics-graph-period">
+                                    <select class="select">
+                                        <option value="Last month">Last month</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- /.program-profile-analytics-graph-caption -->
+                            <div class="program-profile-analytics-graph-total-list">
+                                <div class="program-profile-analytics-graph-total">
+                                    <div class="program-profile-analytics-graph-total-number">2,562</div>
+                                    <div class="program-profile-analytics-graph-total-title">Enrolls in selected period</div>
+                                </div>
+                                <div class="program-profile-analytics-graph-total">
+                                    <div class="program-profile-analytics-graph-total-number">3,298</div>
+                                    <div class="program-profile-analytics-graph-total-title">Earnings in selected period</div>
+                                </div>
+                            </div>
+                            <!-- /.program-profile-analytics-graph-total-list -->
+                            <div class="aspect-ratio">
+                                <canvas id="chart-profile-trend"></canvas>
+                            </div>
+                        </div>
+                        <!-- /.program-profile-analytics-graph -->
+                        <div class="program-profile-analytics-diagram-list">
+                            <div class="program-profile-analytics-diagram">
+                                <div class="program-profile-analytics-diagram-title">Gender distribution</div>
+                                <div class="aspect-ratio" style="padding-bottom: 66.67%;">
+                                    <canvas id="chart-program-gender-distribution"></canvas>
+                                </div>
+                                <div class="legend-container" id="legend-program-gender-distribution"></div>
+                            </div>
+                            <!-- /.program-profile-analytics-diagram -->
+                            <div class="program-profile-analytics-diagram">
+                                <div class="program-profile-analytics-diagram-title">Age distribution</div>
+                                <div class="aspect-ratio" style="padding-bottom: 66.67%;">
+                                    <canvas id="chart-program-age-distribution"></canvas>
+                                </div>
+                                <div class="legend-container" id="legend-program-age-distribution"></div>
+                            </div>
+                            <!-- /.program-profile-analytics-diagram -->
+                            <div class="program-profile-analytics-diagram">
+                                <div class="program-profile-analytics-diagram-title">Course completion % distribution</div>
+                                <div class="aspect-ratio" style="padding-bottom: 66.67%;">
+                                    <canvas id="chart-program-course-completion"></canvas>
+                                    <div class="program-profile-analytics-average">
+                                        <div class="program-profile-analytics-average-title">1,43 weeks</div>
+                                        <div class="program-profile-analytics-average-subtitle">Average</div>
+                                    </div>
+                                </div>
+                                <div class="legend-container" id="legend-program-course-completion"></div>
+                            </div>
+                            <!-- /.program-profile-analytics-diagram -->
+                        </div>
+                        <!-- /.program-profile-analytics-diagram-list -->
+                    </div>
+                    <!-- /.program-profile-analytics -->
+                </div>
                 <!-- /.box -->
                 <div class="box">
                     <div class="program-profile-customers">
@@ -1249,7 +1343,7 @@
                     <!-- /.program-profile-lessons -->
                 </div>
                 <!-- /.box -->
-                <div class="box visible">
+                <div class="box">
                     <div class="program-profile-quiz">
                         <div class="program-profile-quiz-item open">
                             <div class="program-profile-quiz-caption">
