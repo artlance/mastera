@@ -157,7 +157,7 @@ $(document).ready(function () {
         $('html').addClass('panel-show');
     });
 
-    $(document).on('click', '.panel-back, .panel-mask', function (event) {
+    $(document).on('click', '.panel-back, .panel-mask, .panel-close', function (event) {
         event.preventDefault();
         $('.panel').each(function (index, el) {
             $(el).removeClass('show');
@@ -248,6 +248,14 @@ $(document).ready(function () {
     $(document).on('click', '.program-content-back', function (event) {
         event.preventDefault();
         $('.program-content').removeClass('show');
+    });
+
+    //-----------------------------------------//
+
+    //customer profile back
+    $(document).on('click', '.customer-profile-back', function (event) {
+        event.preventDefault();
+        $('.customer-profile-content').removeClass('show');
     });
 
     //-----------------------------------------//
@@ -347,6 +355,11 @@ $(document).ready(function () {
         selectOtherMonths: true,
         dateFormat: "mm.dd.yy",
     });
+
+    //-----------------------------------------//
+
+    //phone mask
+    $('.mask-phone').mask('+1 999 999 99 99', { placeholder: '+1 ___ ___ __ __' });
 
     //-----------------------------------------//
 
@@ -839,6 +852,27 @@ $(document).ready(function () {
 
     }
 
+    //-----------------------------------------//
 
+    //tags
+    $(document).on('keydown', '.tags-new-input', function (event) {
+        if (event.which == 13) {
+            var thisValue = $(this).val();
+            if (thisValue != '') {
+                var thisParent = $(this).parents('.tags-wrapper');
+                $('<div class="tags-item">' + thisValue + '<a href="#" class="tags-item-delete"><i class="far fa-times"></i></a></div>').appendTo(thisParent.find('.tags-pull'));
+                $(this).val('');
+            }
+        }
+    });
+
+    $(document).on('click', '.tags-item-delete', function (event) {
+        event.preventDefault();
+        $(this).parents('.tags-item').fadeOut('150', function () {
+            $(this).remove();
+        });
+    });
+
+    //-----------------------------------------//
 
 });//document ready

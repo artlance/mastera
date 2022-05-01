@@ -48,6 +48,9 @@
     &.show {
         transform: translateX(0);
     }
+    &-v2 {
+        width: 300px;
+    }
     &-mask {
         position: fixed;
         z-index: 4000;
@@ -91,6 +94,25 @@
         font-size: 16px;
         line-height: 1.5;
         font-weight: 500;
+    }
+    &-close {
+        flex: 0 0 24px;
+        max-width: 24px;
+        height: 24px;
+        margin-left: 10px;
+        padding: 3px 0;
+        font-size: 18px;
+        color: $theme-text;
+        text-align: center;
+        opacity: 0.5;
+        transition: opacity $d $f;
+        &:hover {
+            color: $theme-text;
+            opacity: 1;
+        }
+        i {
+            vertical-align: top;
+        }
     }
     &-content {
         flex: 1 0 auto;

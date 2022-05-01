@@ -1,0 +1,124 @@
+    <div class="panel panel-v2" data-panel="customer-profile-edit">
+        <div class="panel-caption">
+            <div class="panel-title">Edit Profile</div>
+            <a href="#" class="panel-close"><i class="fal fa-times"></i></a>
+        </div>
+        <!-- /.panel-caption -->
+        <div class="panel-content">
+            <div class="customer-profile-edit-form">
+                <div class="customer-profile-edit-photo">
+                    <div class="customer-profile-edit-photo-thumb"><img src="upload/user3.jpg" alt=""></div>
+                    <div class="customer-profile-edit-photo-info">
+                        <div class="customer-profile-edit-photo-options">
+                            <div class="customer-profile-edit-photo-upload">
+                                <input type="file" class="customer-profile-edit-photo-upload-input" id="customer-profile-edit-photo-file" name="customer-profile-edit-photo-file">
+                                <label class="customer-profile-edit-photo-upload-label" for="customer-profile-edit-photo-file">Upload pict</label>
+                            </div>
+                            <a href="#" class="customer-profile-edit-photo-delete">Delete</a>
+                        </div>
+                        <div class="customer-profile-edit-photo-size">500x500px - Max 1MB</div>
+                    </div>
+                </div>
+                <!-- /.customer-profile-edit-photo -->
+                <div class="input-wrapper">
+                    <label for="customer-profile-edit-first-name">First Name</label>
+                    <input type="text" class="input-text input-text-gray" value="Arina" placeholder="First Name" id="customer-profile-edit-first-name" name="customer-profile-edit-first-name">
+                    <div class="input-wrapper-error">Required field</div>
+                </div>
+                <!-- /.input-wrapper -->
+                <div class="input-wrapper">
+                    <label for="customer-profile-edit-last-name">Last Name</label>
+                    <input type="text" class="input-text input-text-gray" value="Sanchez" placeholder="Last Name" id="customer-profile-edit-last-name" name="customer-profile-edit-last-name">
+                    <div class="input-wrapper-error">Required field</div>
+                </div>
+                <!-- /.input-wrapper -->
+                <div class="input-wrapper">
+                    <label for="customer-profile-edit-gender">Gender</label>
+                    <select class="select" name="customer-profile-edit-gender" id="customer-profile-edit-gender">
+                        <option value="Female">Female</option>
+                    </select>
+                    <div class="input-wrapper-error">Required field</div>
+                </div>
+                <!-- /.input-wrapper -->
+                <div class="input-wrapper">
+                    <label for="customer-profile-edit-dob">Date of birth</label>
+                    <div class="customer-profile-edit-datepicker">
+                        <input type="text" class="input-text input-text-gray mask-date datepicker" placeholder="mm.dd.yyyy" value="11.11.2000" id="customer-profile-edit-dob" name="customer-profile-edit-dob">
+                        <label class="customer-profile-edit-datepicker-icon" for="customer-profile-edit-dob"><i class="far fa-calendar-alt"></i></label>
+                    </div>
+                    <!-- /.customer-profile-edit-datepicker -->
+                    <div class="input-wrapper-error">Required field</div>
+                </div>
+                <!-- /.input-wrapper -->
+                <div class="input-wrapper">
+                    <label for="customer-profile-edit-phone">Phone</label>
+                    <input type="tel" class="input-text input-text-gray mask-phone" value="+1 123 323 43 54" id="customer-profile-edit-phone" name="customer-profile-edit-phone">
+                    <div class="input-wrapper-error">Required field</div>
+                </div>
+                <!-- /.input-wrapper -->
+                <div class="input-wrapper">
+                    <label for="customer-profile-edit-email">Email</label>
+                    <input type="email" class="input-text input-text-gray" value="mail@example.com" placeholder="mail@example.com" id="customer-profile-edit-email" name="customer-profile-edit-email">
+                    <div class="input-wrapper-error">Required field</div>
+                </div>
+                <!-- /.input-wrapper -->
+                <div class="input-wrapper">
+                    <label for="customer-profile-edit-status">Status</label>
+                    <select class="select" name="customer-profile-edit-status" id="customer-profile-edit-status">
+                        <option value="Customer">Customer</option>
+                    </select>
+                    <div class="input-wrapper-error">Required field</div>
+                </div>
+                <!-- /.input-wrapper -->
+                <div class="input-wrapper">
+                    <label for="customer-profile-edit-location">Location</label>
+                    <select class="select" name="customer-profile-edit-location" id="customer-profile-edit-location">
+                        <option value="Default">Default</option>
+                    </select>
+                    <div class="input-wrapper-error">Required field</div>
+                </div>
+                <!-- /.input-wrapper -->
+                <div class="input-wrapper">
+                    <label for="customer-profile-edit-notes">Notes</label>
+                    <textarea class="textarea" id="customer-profile-edit-notes" name="customer-profile-edit-notes" cols="30" rows="10"></textarea>
+                    <div class="input-wrapper-error">Required field</div>
+                </div>
+                <!-- /.input-wrapper -->
+                <div class="input-wrapper">
+                    <label for="customer-profile-edit-tags">Tags</label>
+                    <div class="tags-wrapper">
+                        <div class="tags-pull">
+                            <div class="tags-item">
+                                Tag item
+                                <a href="#" class="tags-item-delete"><i class="far fa-times"></i></a>
+                            </div>
+                        </div>
+                        <!-- /.tags-pull -->
+                        <div class="tags-new">
+                            <input type="text" class="tags-new-input" placeholder="New tag" id="customer-profile-edit-tags">
+                        </div>
+                    </div>
+                    <!-- /.tags-wrapper -->
+                    <div class="input-wrapper-error">Required field</div>
+                </div>
+                <!-- /.input-wrapper -->
+                <div class="customer-profile-edit-checkbox">
+                    <input type="checkbox" id="customer-profile-edit-invite" name="customer-profile-edit-invite" checked>
+                    <label for="customer-profile-edit-invite">
+                        <span class="customer-profile-edit-checkbox-icon"><i class="fas fa-check"></i></span>
+                        Send an invite to create an account
+                    </label>
+                </div>
+                <!-- /.customer-profile-edit-checkbox -->
+            </div>
+            <!-- /.customer-profile-edit-form -->
+        </div>
+        <!-- /.panel-content -->
+        <div class="panel-nav">
+            <div class="panel-nav-button">
+                <a href="#" class="button">Save</a>
+            </div>
+        </div>
+        <!-- /.panel-nav -->
+    </div>
+    <!-- /.panel -->
